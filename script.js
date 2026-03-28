@@ -157,4 +157,37 @@
         document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
       });
     }
-  });
+  });document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Icon එක මාරු කරන්න (Bars -> X)
+        const icon = menuToggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // Scroll කරද්දී Navigation highlight කිරීම
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').includes(current)) {
+                item.classList.add('active');
+            }
+        });
+    });
+});
