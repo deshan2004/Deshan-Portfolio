@@ -1,4 +1,4 @@
- // Projects data with full tech variety reflecting HTML, CSS, JS, React, Angular, Node, PHP, Java, Python, etc.
+  // Projects data (TaskFlow Angular removed)
   const projectsData = [
     {
       id: "educonnect-lms",
@@ -7,7 +7,7 @@
       fullDesc: "Built with PHP, MySQL, Tailwind CSS, and JavaScript. Features admin, staff, and student panels with course tracking, assignment submission, and authentication.",
       tech: ["PHP", "MySQL", "Tailwind CSS", "JavaScript"],
       features: ["Role-based panels (Admin/Staff/Student)", "Assignment submission & grading", "Course tracking & progress", "Secure Authentication (BCrypt)"],
-      repo: "https://github.com/Maleesha-Sanjana/Edu-Connect",
+      repo: "https://github.com/deshan2004/educonnect-lms",
       liveDemo: "#"
     },
     {
@@ -27,7 +27,7 @@
       fullDesc: "Robust PHP & MySQL application with employee CRUD, project assignment, work logs, and payroll modules. Features jQuery and Bootstrap frontend.",
       tech: ["PHP", "MySQL", "Bootstrap", "jQuery"],
       features: ["Employee CRUD operations", "Project assignment tracking", "Work log with timestamps", "Payroll & summary reports"],
-      repo: "https://github.com/deshan2004/employee-project-managment-system",
+      repo: "https://github.com/deshan2004/employee-project-management-system",
       liveDemo: "#"
     },
     {
@@ -49,8 +49,7 @@
       features: ["Trending movies & search", "Dynamic DOM rendering", "Personal watchlist", "Detailed movie modals"],
       repo: "https://github.com/deshan2004/CineMate",
       liveDemo: "#"
-    },
-   
+    }
   ];
 
   function renderProjects() {
@@ -76,7 +75,7 @@
     });
   }
 
-  // Modal detail view for projects
+  // Modal detail view
   window.showProjectDetail = function(projectId) {
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
@@ -134,6 +133,11 @@
   // Smooth scroll for navigation
   document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
+    
+    // Optional: Replace with a custom profile photo if you have a URL
+    // Uncomment and replace with your actual image URL:
+    // document.getElementById('profileImg').src = "your-photo-url.jpg";
+    
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
@@ -145,6 +149,7 @@
         }
       });
     });
+    
     const projectBtn = document.querySelector('.hero-btns .btn');
     if(projectBtn) {
       projectBtn.addEventListener('click', (e) => {
