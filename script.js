@@ -7,7 +7,7 @@
       fullDesc: "Built with PHP, MySQL, Tailwind CSS, and JavaScript. Features admin, staff, and student panels with course tracking, assignment submission, and authentication.",
       tech: ["PHP", "MySQL", "Tailwind CSS", "JavaScript"],
       features: ["Role-based panels (Admin/Staff/Student)", "Assignment submission & grading", "Course tracking & progress", "Secure Authentication (BCrypt)"],
-      repo: "https://github.com/deshan2004/educonnect-lms",
+      repo: "https://github.com/Maleesha-Sanjana/Edu-Connect",
       liveDemo: "#"
     },
     {
