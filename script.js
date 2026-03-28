@@ -27,7 +27,7 @@
       fullDesc: "Robust PHP & MySQL application with employee CRUD, project assignment, work logs, and payroll modules. Features jQuery and Bootstrap frontend.",
       tech: ["PHP", "MySQL", "Bootstrap", "jQuery"],
       features: ["Employee CRUD operations", "Project assignment tracking", "Work log with timestamps", "Payroll & summary reports"],
-      repo: "https://github.com/deshan2004/employee-project-management-system",
+      repo: "https://github.com/deshan2004/employee-project-managment-system",
       liveDemo: "#"
     },
     {
