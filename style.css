@@ -351,7 +351,11 @@
       flex-wrap: wrap;
       margin-top: 0.5rem;
     }
-
+    .social-links a[href*="wa.me"]:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: white;
+}
     .project-links a {
       text-decoration: none;
       font-weight: 500;
