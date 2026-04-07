@@ -1,4 +1,3 @@
-  // Projects data (TaskFlow Angular removed)
   const projectsData = [
     {
       id: "educonnect-lms",
@@ -75,7 +74,6 @@
     });
   }
 
-  // Modal detail view
   window.showProjectDetail = function(projectId) {
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
@@ -130,13 +128,8 @@
     modalDiv.addEventListener('click', (e) => { if(e.target === modalDiv) closeModal(); });
   };
 
-  // Smooth scroll for navigation
   document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
-    
-    // Optional: Replace with a custom profile photo if you have a URL
-    // Uncomment and replace with your actual image URL:
-    // document.getElementById('profileImg').src = "your-photo-url.jpg";
     
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
@@ -161,16 +154,13 @@
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
-    // Mobile menu toggle
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        // Icon එක මාරු කරන්න (Bars -> X)
         const icon = menuToggle.querySelector('i');
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
     });
 
-    // Scroll කරද්දී Navigation highlight කිරීම
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-links a');
 
