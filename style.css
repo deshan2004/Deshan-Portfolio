@@ -249,17 +249,7 @@
     section {
       padding: 5rem 0;
     }
-.hero-btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;       
-}
 
-@media (max-width: 700px) {
-  .hero-btns {
-    justify-content: center;
-  }
-}
     .section-title {
       font-size: 2.2rem;
       font-weight: 700;
