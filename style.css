@@ -143,6 +143,18 @@
       flex-direction: column;
       gap: 1.5rem;
     }
+    .hero-btns {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;       
+}
+
+
+@media (max-width: 700px) {
+  .hero-btns {
+    justify-content: center;
+  }
+}
 
     .stat-note {
   display: inline-flex;
