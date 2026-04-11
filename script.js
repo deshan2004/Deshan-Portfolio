@@ -48,7 +48,18 @@
       features: ["Trending movies & search", "Dynamic DOM rendering", "Personal watchlist", "Detailed movie modals"],
       repo: "https://github.com/deshan2004/CineMate",
       liveDemo: "#"
-    }
+    },
+
+    {
+  id: "sky-drifter",
+  name: "Sky Drifter",
+  shortDesc: "Celestial platformer game built with Phaser 3 engine.",
+  fullDesc: "A high-performance 2D platformer featuring arcade physics, smooth animations, and a glassmorphism UI. Developed using the Phaser 3 framework, showcasing advanced state management and real-time asset loading.",
+  tech: ["Phaser 3", "JavaScript (ES6+)", "HTML5 Canvas", "Arcade Physics"],
+  features: ["Dynamic level progression", "Interactive glassmorphism HUD", "Neon-visual aesthetics", "High-score persistence via LocalStorage"],
+  repo: "https://github.com/deshan2004/sky-drifter", // ඔයාගේ නිවැරදි repo link එක දාන්න
+  liveDemo: "game/index.html" // ගේම් එක තියෙන path එක මෙතනට දෙන්න
+}
   ];
 
   function renderProjects() {

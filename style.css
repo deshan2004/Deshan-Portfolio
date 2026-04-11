@@ -587,3 +587,9 @@ nav {
   }
   .nav-links.active { display: flex; }
 }
+.modal-media iframe {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Phaser ගේම් එකේ size එක අනුව මේක වෙනස් කරන්න */
+    max-height: 500px;
+    background: #000;
+}
