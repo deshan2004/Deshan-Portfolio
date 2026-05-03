@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Portfolio of Deshan Siriwardhana - Full-Stack Developer, AI Enthusiast, and Software QA Specialist. Showcasing projects like ShelfLife-AI, Neth-Sawan, Sky Drifter, and more.">
-  <title>Deshan Siriwardhana · Full-Stack Dev | AI Enthusiast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Deshan Siriwardhana - Full-Stack Developer, AI Enthusiast, Software QA. Mobile-optimized portfolio showcasing projects, skills, and contact.">
+  <title>Deshan Siriwardhana · Mobile-First Dev Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
 <div class="video-background">
   <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg">
     <source src="https://cdn.pixabay.com/video/2021/04/12/70860-537449767_large.mp4" type="video/mp4">
@@ -25,7 +24,7 @@
     <div class="menu-toggle" id="mobile-menu">
       <i class="fas fa-bars"></i>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#tech-stack">Tech Stack</a></li>
@@ -43,17 +42,17 @@
         <h1>Hi, I'm <span>Deshan Siriwardhana</span></h1>
         <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | SQA & Clean Code Advocate</p>
         <div class="hero-btns">
-          <a href="#projects" class="btn"><i class="fas fa-code"></i> View Projects</a>
+          <a href="#projects" class="btn"><i class="fas fa-code"></i> Projects</a>
           <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-          <a href="CV.pdf" download id="CV.pdf" class="btn btn-primary-glow"><i class="fas fa-file-download"></i> Download CV</a>
+          <button id="downloadCvBtn" class="btn btn-primary-glow"><i class="fas fa-file-download"></i> CV</button>
         </div>
         <div class="stat-note">
-          <i class="fas fa-map-marker-alt"></i> Based in Sri Lanka 🇱🇰 · Open for remote opportunities
+          <i class="fas fa-map-marker-alt"></i> Sri Lanka 🇱🇰 · Open remote
         </div>
       </div>
       <div class="hero-right">
         <div class="profile-frame">
-          <img src="ds.jpeg" alt="Deshan Siriwardhana" class="profile-photo" id="profileImg">
+          <img src="ds.jpeg" alt="Deshan Siriwardhana" class="profile-photo" onerror="this.src='https://placehold.co/400x500/1e2a3a/ffb347?text=Deshan'">
           <div class="profile-status">
             <span class="status-dot"></span> Active
           </div>
@@ -66,17 +65,17 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-text">
-        <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps, integrating real-time AI processing, and ensuring top-tier software quality through SQA practices. I thrive on turning complex ideas into elegant digital experiences. Currently, I focus on <strong>web architecture, AI-driven accessibility, and automated testing</strong>.</p>
+        <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps, integrating real-time AI, and ensuring top-tier software quality. I thrive on turning complex ideas into elegant digital experiences. Currently focused on <strong>web architecture, AI accessibility, and automated testing</strong>.</p>
         <div class="about-stats">
           <div class="stat-item"><i class="fas fa-code"></i> 10+ Projects</div>
-          <div class="stat-item"><i class="fas fa-users"></i> 10+ Collaborations</div>
-          <div class="stat-item"><i class="fas fa-trophy"></i> 1+ Hackathons</div>
+          <div class="stat-item"><i class="fas fa-users"></i> Team Collaborations</div>
+          <div class="stat-item"><i class="fas fa-trophy"></i> Hackathons</div>
         </div>
       </div>
       <div class="skills">
         <span>Full-Stack Dev</span><span>Software QA</span><span>AI Integration</span>
         <span>REST APIs</span><span>Agile Methodologies</span><span>Manual Testing</span>
-        <span>RTM Documentation</span><span>Performance Optimization</span>
+        <span>Performance Optimization</span>
       </div>
     </div>
   </section>
@@ -90,10 +89,10 @@
           <div class="tech-badge-container">
             <div class="tech-badge"><i class="fab fa-html5"></i> HTML5</div>
             <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</div>
-            <div class="tech-badge"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
+            <div class="tech-badge"><i class="fab fa-js"></i> JavaScript</div>
             <div class="tech-badge"><i class="fab fa-react"></i> React.js</div>
             <div class="tech-badge"><i class="fab fa-angular"></i> Angular</div>
-            <div class="tech-badge"><i class="fab fa-tailwind"></i> Tailwind CSS</div>
+            <div class="tech-badge"><i class="fab fa-tailwind"></i> Tailwind</div>
           </div>
         </div>
         <div class="tech-category">
@@ -103,8 +102,7 @@
             <div class="tech-badge"><i class="fab fa-python"></i> Python</div>
             <div class="tech-badge"><i class="fab fa-php"></i> PHP</div>
             <div class="tech-badge"><i class="fab fa-java"></i> Java</div>
-            <div class="tech-badge"><i class="fas fa-code-branch"></i> Express.js</div>
-            <div class="tech-badge"><i class="fas fa-leaf"></i> Laravel</div>
+            <div class="tech-badge"><i class="fas fa-code-branch"></i> Express</div>
           </div>
         </div>
         <div class="tech-category">
@@ -113,7 +111,7 @@
             <div class="tech-badge"><i class="fas fa-database"></i> MySQL</div>
             <div class="tech-badge"><i class="fas fa-leaf"></i> MongoDB</div>
             <div class="tech-badge"><i class="fas fa-fire"></i> Firebase</div>
-            <div class="tech-badge"><i class="fas fa-cloud"></i> Oracle DB</div>
+            <div class="tech-badge"><i class="fas fa-cloud"></i> Oracle</div>
             <div class="tech-badge"><i class="fas fa-table"></i> PostgreSQL</div>
           </div>
         </div>
@@ -123,7 +121,7 @@
             <div class="tech-badge"><i class="fas fa-brain"></i> TensorFlow.js</div>
             <div class="tech-badge"><i class="fas fa-robot"></i> Web Speech API</div>
             <div class="tech-badge"><i class="fas fa-check-circle"></i> Selenium</div>
-            <div class="tech-badge"><i class="fas fa-file-alt"></i> RTM / TestRail</div>
+            <div class="tech-badge"><i class="fas fa-file-alt"></i> JUnit</div>
             <div class="tech-badge"><i class="fab fa-git-alt"></i> Git/GitHub</div>
           </div>
         </div>
@@ -141,9 +139,7 @@
   <section id="contact" class="contact">
     <div class="container">
       <h2 class="section-title">Let's Connect</h2>
-      <p style="margin-bottom: 1.5rem; text-align:center;">Open for collaborations, freelance, or tech talks  let's build something great.</p>
-      
-      <!-- Enhanced Contact Form -->
+      <p style="margin-bottom: 1rem; text-align: center;">Open for collaborations, freelance, or tech talks — let's build something great.</p>
       <div class="contact-wrapper">
         <div class="contact-info">
           <div class="info-card">
@@ -162,7 +158,6 @@
             <p>deshan2004</p>
           </div>
         </div>
-        
         <form class="contact-form" id="contactForm">
           <div class="form-group">
             <input type="text" id="senderName" placeholder="Your Name" required>
@@ -174,20 +169,19 @@
             <input type="text" id="senderSubject" placeholder="Subject" required>
           </div>
           <div class="form-group">
-            <textarea id="senderMessage" rows="5" placeholder="Your Message..." required></textarea>
+            <textarea id="senderMessage" rows="4" placeholder="Your Message..." required></textarea>
           </div>
           <button type="submit" class="btn submit-btn">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </form>
       </div>
-      
       <div class="social-links">
         <a href="https://linkedin.com/in/deshan-siriwardhana-591763277" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/deshan2004" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio!" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://wa.me/94769776315" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <div style="margin-top: 2rem; text-align:center; font-size:0.85rem;">
+      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem;">
         <i class="fas fa-briefcase"></i> Available for <strong>Remote</strong> & <strong>On-site</strong> Opportunities
         <br>
         <span><i class="fas fa-map-marker-alt"></i> Based in Sri Lanka 🇱🇰</span>
@@ -200,7 +194,6 @@
   <p>© 2026 Deshan Siriwardhana — Full-Stack Dev | AI Enthusiast | SQA Focused <i class="fas fa-code"></i></p>
 </footer>
 
-<!-- Toast Notification -->
 <div id="toast" class="toast"></div>
 
 <script src="script.js"></script>
