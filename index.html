@@ -44,7 +44,7 @@
         <div class="hero-btns">
           <a href="#projects" class="btn"><i class="fas fa-code"></i> Projects</a>
           <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-          <button id="downloadCvBtn" class="btn btn-primary-glow"><i class="fas fa-file-download"></i> CV</button>
+          <button id="downloadCvBtn" class="btn btn-primary-glow"><i class="fas fa-file-download"></i> Download CV</button>
         </div>
         <div class="stat-note">
           <i class="fas fa-map-marker-alt"></i> Sri Lanka 🇱🇰 · Open remote
@@ -139,52 +139,82 @@
   <section id="contact" class="contact">
     <div class="container">
       <h2 class="section-title">Let's Connect</h2>
-      <p style="margin-bottom: 1rem; text-align: center;">Open for collaborations, freelance, or tech talks — let's build something great.</p>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <div class="info-card">
-            <i class="fas fa-envelope"></i>
-            <h3>Email Me</h3>
+      <p style="margin-bottom: 1.5rem; text-align: center; color: #b9c7da;">Have a project in mind? Let's collaborate! 👇</p>
+      
+      <!-- Quick Contact Cards -->
+      <div class="quick-contact-cards">
+        <div class="quick-card" onclick="window.location.href='mailto:deshandhakshitha16@gmail.com'">
+          <div class="quick-card-icon"><i class="fas fa-envelope"></i></div>
+          <div class="quick-card-info">
+            <h4>Email Me</h4>
             <p>deshandhakshitha16@gmail.com</p>
           </div>
-          <div class="info-card">
-            <i class="fab fa-whatsapp"></i>
-            <h3>WhatsApp</h3>
+          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="quick-card" onclick="window.open('https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!', '_blank')">
+          <div class="quick-card-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="quick-card-info">
+            <h4>WhatsApp</h4>
             <p>+94 76 977 6315</p>
           </div>
-          <div class="info-card">
-            <i class="fab fa-github"></i>
-            <h3>GitHub</h3>
-            <p>deshan2004</p>
+          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="quick-card" onclick="window.open('https://github.com/deshan2004', '_blank')">
+          <div class="quick-card-icon"><i class="fab fa-github"></i></div>
+          <div class="quick-card-info">
+            <h4>GitHub</h4>
+            <p>@deshan2004</p>
           </div>
+          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="quick-card" onclick="window.open('https://linkedin.com/in/deshan-siriwardhana-591763277', '_blank')">
+          <div class="quick-card-icon"><i class="fab fa-linkedin"></i></div>
+          <div class="quick-card-info">
+            <h4>LinkedIn</h4>
+            <p>Connect with me</p>
+          </div>
+          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <!-- Contact Form with Better UX -->
+      <div class="contact-form-wrapper">
+        <div class="form-header">
+          <i class="fas fa-paper-plane"></i>
+          <h3>Send me a message</h3>
+          <p>I'll get back to you within 24 hours</p>
         </div>
         <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <input type="text" id="senderName" placeholder="Your Name" required>
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> Your Name *</label>
+              <input type="text" id="senderName" placeholder="e.g., John Doe" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-envelope"></i> Email Address *</label>
+              <input type="email" id="senderEmail" placeholder="john@example.com" required>
+            </div>
           </div>
           <div class="form-group">
-            <input type="email" id="senderEmail" placeholder="Your Email" required>
+            <label><i class="fas fa-tag"></i> Subject *</label>
+            <input type="text" id="senderSubject" placeholder="Project Inquiry / Collaboration / Question" required>
           </div>
           <div class="form-group">
-            <input type="text" id="senderSubject" placeholder="Subject" required>
+            <label><i class="fas fa-comment"></i> Message *</label>
+            <textarea id="senderMessage" rows="5" placeholder="Tell me about your project or what you'd like to discuss..." required></textarea>
           </div>
-          <div class="form-group">
-            <textarea id="senderMessage" rows="4" placeholder="Your Message..." required></textarea>
-          </div>
-          <button type="submit" class="btn submit-btn">
+          <button type="submit" class="btn submit-btn" id="submitBtn">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </form>
       </div>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/deshan-siriwardhana-591763277" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/deshan2004" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://wa.me/94769776315" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      </div>
-      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem;">
-        <i class="fas fa-briefcase"></i> Available for <strong>Remote</strong> & <strong>On-site</strong> Opportunities
-        <br>
-        <span><i class="fas fa-map-marker-alt"></i> Based in Sri Lanka 🇱🇰</span>
+      
+      <!-- Availability Badge -->
+      <div class="availability-badge">
+        <i class="fas fa-briefcase"></i>
+        <span>Available for <strong>Remote</strong> & <strong>On-site</strong> Opportunities</span>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Based in Sri Lanka 🇱🇰</span>
       </div>
     </div>
   </section>
