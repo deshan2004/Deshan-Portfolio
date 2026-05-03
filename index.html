@@ -39,20 +39,25 @@
   <section id="home" class="hero">
     <div class="container hero-content">
       <div class="hero-left">
+        <div class="badge-glow">✨ Available for Work</div>
         <h1>Hi, I'm <span>Deshan Siriwardhana</span></h1>
         <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | SQA & Clean Code Advocate</p>
         <div class="hero-btns">
           <a href="#projects" class="btn"><i class="fas fa-code"></i> View Projects</a>
           <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-          <a href="CV.pdf" id="CV.pdf" class="btn btn-outline"><i class="fas fa-file-download"></i> Download CV</a>
+          <a href="CV.pdf" download id="CV.pdf" class="btn btn-primary-glow"><i class="fas fa-file-download"></i> Download CV</a>
         </div>
         <div class="stat-note">
-          <i class="fas fa-map-marker-alt"></i> Based in Sri Lanka 🇱🇰 · Open for job opportunities
+          <i class="fas fa-map-marker-alt"></i> Based in Sri Lanka 🇱🇰 · Open for remote opportunities
         </div>
       </div>
       <div class="hero-right">
-        <!-- Professional placeholder image - replace with your own photo URL -->
-        <img src="ds.jpeg" alt="Deshan Siriwardhana" class="profile-photo" id="profileImg">
+        <div class="profile-frame">
+          <img src="ds.jpeg" alt="Deshan Siriwardhana" class="profile-photo" id="profileImg">
+          <div class="profile-status">
+            <span class="status-dot"></span> Active
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -62,7 +67,11 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-text">
         <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps, integrating real-time AI processing, and ensuring top-tier software quality through SQA practices. I thrive on turning complex ideas into elegant digital experiences. Currently, I focus on <strong>web architecture, AI-driven accessibility, and automated testing</strong>.</p>
-        <p style="margin-top: 1rem;"><i class="fas fa-envelope"></i> deshandhakshitha16@gmail.com</p>
+        <div class="about-stats">
+          <div class="stat-item"><i class="fas fa-code"></i> 50+ Projects</div>
+          <div class="stat-item"><i class="fas fa-users"></i> 10+ Collaborations</div>
+          <div class="stat-item"><i class="fas fa-trophy"></i> 5+ Hackathons</div>
+        </div>
       </div>
       <div class="skills">
         <span>Full-Stack Dev</span><span>Software QA</span><span>AI Integration</span>
@@ -133,10 +142,49 @@
     <div class="container">
       <h2 class="section-title">Let's Connect</h2>
       <p style="margin-bottom: 1.5rem; text-align:center;">Open for collaborations, freelance, or tech talks — let's build something great.</p>
+      
+      <!-- Enhanced Contact Form -->
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Me</h3>
+            <p>deshandhakshitha16@gmail.com</p>
+          </div>
+          <div class="info-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <p>+94 76 977 6315</p>
+          </div>
+          <div class="info-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>deshan2004</p>
+          </div>
+        </div>
+        
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="senderName" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="senderEmail" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="senderSubject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea id="senderMessage" rows="5" placeholder="Your Message..." required></textarea>
+          </div>
+          <button type="submit" class="btn submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+      
       <div class="social-links">
         <a href="https://linkedin.com/in/deshan-siriwardhana-591763277" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/deshan2004" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="mailto:deshandhakshitha16@gmail.com"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio!" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
       <div style="margin-top: 2rem; text-align:center; font-size:0.85rem;">
@@ -151,6 +199,9 @@
 <footer>
   <p>© 2026 Deshan Siriwardhana — Full-Stack Dev | AI Enthusiast | SQA Focused <i class="fas fa-code"></i></p>
 </footer>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
 
 <script src="script.js"></script>
 </body>

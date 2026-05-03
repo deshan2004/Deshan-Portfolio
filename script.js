@@ -1,24 +1,24 @@
-// Complete projects data including ShelfLife-AI and Sky Drifter from your GitHub
+// Complete projects data including ShelfLife-AI and Sky Drifter
 const projectsData = [
   {
     id: "shelflife-ai",
     name: "ShelfLife-AI",
     shortDesc: "AI-powered retail inventory management & expiry loss prevention",
     fullDesc: "An innovative AI-powered inventory management system that uses OCR technology and predictive analytics to eliminate expiry losses, digitize traditional stock tracking, and maximize profits for small-scale retailers. Built with modern full-stack technologies.",
-    tech: ["React.js", "TensorFlow.js", "Node.js", "Firebase", "JavaScript", "OCR"],
+    tech: ["React.js", "TensorFlow.js", "Node.js", "MongoDB", "Python", "OCR"],
     features: ["Expiry date prediction using ML models", "Real-time inventory dashboard with analytics", "Automated alerts for near-expiry items", "OCR-based digitization of stock records", "Waste reduction & profit maximization reports"],
     repo: "https://github.com/deshan2004/ShelfLife-AI",
-    liveDemo: "https://shelf-life-ai-46q7.vercel.app/"
+    liveDemo: "#"
   },
   {
     id: "neth-sawan",
     name: "Neth-Sawan",
     shortDesc: "AI-driven accessibility platform for hearing impaired",
     fullDesc: "An AI-driven accessibility platform designed for the hearing impaired, providing real-time speech-to-sign language translation, object recognition, and sound visualization to bridge communication gaps.",
-    tech: ["React.js", "TensorFlow.js", "Web Speech API", "Node.js", "Firebase"],
+    tech: ["React.js", "TensorFlow.js", "Web Speech API", "Python"],
     features: ["Real-time speech-to-sign language translation", "Object recognition via camera", "Sound visualization for environment awareness", "Cross-platform accessible design"],
     repo: "https://github.com/deshan2004/Neth-Sawan",
-    liveDemo: "https://neth-sawan.vercel.app/"
+    liveDemo: "#"
   },
   {
     id: "sky-drifter",
@@ -35,20 +35,20 @@ const projectsData = [
     name: "CineMate",
     shortDesc: "Movie & TV show discovery web app with real-time data",
     fullDesc: "A sleek and responsive movie and TV show discovery web application built with HTML, CSS, and JavaScript. Features real-time data integration from TMDB, dark-themed UI, and a personalized favorites system.",
-    tech: ["JavaScript", "HTML5", "CSS3", "TMDB API","Firebase"],
+    tech: ["JavaScript", "HTML5", "CSS3", "TMDB API"],
     features: ["Real-time trending movies & search", "Dynamic DOM rendering", "Personalized watchlist with local storage", "Detailed movie modals with ratings"],
     repo: "https://github.com/deshan2004/CineMate",
-    liveDemo: "https://deshan2004.github.io/CineMate/"
+    liveDemo: "#"
   },
   {
     id: "tailwatch",
     name: "TailWatch",
     shortDesc: "Community-Powered Stray Dog Care & Rabies Prevention",
     fullDesc: "A community-driven platform for stray dog care and rabies prevention. Enables stray dog registry, vaccination alerts, and community reporting to promote animal welfare and public health.",
-    tech: ["HTML5", "CSS3", "JavaScript", "Firebase","PHP"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Firebase"],
     features: ["Stray dog registry with geolocation", "Vaccination reminder system", "Community rescue and incident reports", "Real-time data synchronization"],
     repo: "https://github.com/deshan2004/TailWatch",
-    liveDemo: "https://deshan2004.github.io/TailWatch/"
+    liveDemo: "#"
   },
   {
     id: "educonnect",
@@ -58,10 +58,105 @@ const projectsData = [
     tech: ["CSS", "JavaScript", "PHP", "MySQL"],
     features: ["Course creation and enrollment", "Assignment submission & grading", "Discussion forums", "Progress analytics"],
     repo: "https://github.com/deshan2004/Edu-Connect",
-    liveDemo: "https://edu-connect-rust-eta.vercel.app/"
+    liveDemo: "#"
   }
 ];
 
+// Generate Sample CV Blob for Download
+function generateAndDownloadCV() {
+  const cvContent = `DESHAN SIRIWARDHANA
+======================
+📍 Based in Sri Lanka
+📧 deshandhakshitha16@gmail.com
+📱 +94 76 977 6315
+🔗 github.com/deshan2004
+
+PROFESSIONAL SUMMARY
+-------------------
+Software Engineering undergraduate passionate about Full-Stack Development, AI Integration, and Software Quality Assurance. Proven track record of building scalable web applications and innovative AI solutions.
+
+EDUCATION
+---------
+🎓 BSc (Hons) in Software Engineering (UGC Approved)
+   • Expected Graduation: 2026
+   • Focus: Web Architecture, Real-time AI Processing, Software QA
+
+TECHNICAL SKILLS
+---------------
+• Languages: JavaScript, Python, PHP, Java, HTML5, CSS3
+• Frameworks: React.js, Angular, Node.js, Express.js, Laravel
+• Databases: MySQL, MongoDB, Firebase, PostgreSQL
+• AI/ML: TensorFlow.js, Web Speech API, OCR
+• QA Tools: Selenium, Manual Testing, RTM Documentation
+• Tools: Git, GitHub, VS Code, Postman
+
+FEATURED PROJECTS
+----------------
+1. ShelfLife-AI - AI-powered inventory management system using OCR and ML for expiry prediction
+2. Neth-Sawan - Accessibility platform with speech-to-sign language translation
+3. Sky Drifter - Celestial platformer game built with Phaser 3 engine
+4. CineMate - Movie discovery app with TMDB API integration
+5. TailWatch - Community platform for stray dog care and rabies prevention
+
+CERTIFICATIONS & ACHIEVEMENTS
+----------------------------
+• Full-Stack Web Development Certification
+• AI for Everyone - DeepLearning.AI
+• 5+ Hackathon participations
+
+AVAILABILITY
+-----------
+✅ Open for Remote & On-site opportunities
+✅ Available for freelance and collaborations
+
+CONTACT
+-------
+📧 deshandhakshitha16@gmail.com
+💬 WhatsApp: +94 76 977 6315
+💼 LinkedIn: linkedin.com/in/deshan-siriwardhana-591763277
+
+---
+This CV was downloaded from my portfolio website.
+© 2026 Deshan Siriwardhana`;
+
+  const blob = new Blob([cvContent], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Deshan_Siriwardhana_CV.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  
+  showToast('✅ CV downloaded successfully!', 'success');
+}
+
+// Send email using mailto with pre-filled content
+function sendEmailViaMailto(name, email, subject, message) {
+  const recipient = 'deshandhakshitha16@gmail.com';
+  const mailtoSubject = `Portfolio Contact: ${subject}`;
+  const mailtoBody = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}%0A%0A---%0ASent from your portfolio website.`;
+  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
+  window.location.href = mailtoLink;
+  return true;
+}
+
+// Toast notification function
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = message;
+  toast.className = 'toast show';
+  if (type === 'error') toast.classList.add('error');
+  if (type === 'warning') toast.classList.add('warning');
+  setTimeout(() => {
+    toast.classList.remove('show');
+    toast.className = 'toast';
+  }, 4000);
+}
+
+// Render projects
 function renderProjects() {
   const grid = document.getElementById('projectGrid');
   if (!grid) return;
@@ -92,6 +187,7 @@ function renderProjects() {
   });
 }
 
+// Show project details modal
 window.showProjectDetail = function(projectId) {
   const project = projectsData.find(p => p.id === projectId);
   if (!project) return;
@@ -138,6 +234,45 @@ window.showProjectDetail = function(projectId) {
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   
+  // CV Download button
+  const cvBtn = document.getElementById('downloadCvBtn');
+  if (cvBtn) {
+    cvBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      generateAndDownloadCV();
+    });
+  }
+  
+  // Contact Form Handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('senderName')?.value.trim();
+      const email = document.getElementById('senderEmail')?.value.trim();
+      const subject = document.getElementById('senderSubject')?.value.trim();
+      const message = document.getElementById('senderMessage')?.value.trim();
+      
+      if (!name || !email || !subject || !message) {
+        showToast('⚠️ Please fill in all fields', 'warning');
+        return;
+      }
+      
+      if (!email.includes('@') || !email.includes('.')) {
+        showToast('❌ Please enter a valid email address', 'error');
+        return;
+      }
+      
+      // Send email via mailto
+      const success = sendEmailViaMailto(name, email, subject, message);
+      if (success) {
+        showToast('📧 Opening your email app...', 'success');
+        contactForm.reset();
+      }
+    });
+  }
+  
   // Mobile menu toggle
   const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.querySelector('.nav-links');
@@ -159,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let current = "";
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
       if (pageYOffset >= sectionTop - 120) {
         current = section.getAttribute('id');
       }
@@ -181,7 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Close mobile menu if open
         if (navLinks.classList.contains('active')) {
           navLinks.classList.remove('active');
           if (menuToggle) {
@@ -196,19 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Hero button smooth scroll
   const viewProjectsBtn = document.querySelector('.hero-btns .btn');
-  if (viewProjectsBtn) {
+  if (viewProjectsBtn && viewProjectsBtn.getAttribute('href') === '#projects') {
     viewProjectsBtn.addEventListener('click', (e) => {
       e.preventDefault();
       document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-  
-  // CV download alert (replace with actual CV link if available)
-  const cvBtn = document.getElementById('fakeCvBtn');
-  if (cvBtn) {
-    cvBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert("📄 Resume available upon request. Feel free to reach out via email for the detailed CV!");
     });
   }
   
@@ -220,3 +344,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Add modal animation style dynamically
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes modalPop {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+`;
+document.head.appendChild(style);
