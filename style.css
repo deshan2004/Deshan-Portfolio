@@ -59,7 +59,7 @@ body {
   border-radius: 10px;
 }
 
-/* Navigation - Fixed & Mobile Friendly */
+/* Navigation */
 nav {
   position: fixed;
   top: 0;
@@ -377,57 +377,94 @@ section {
   border-color: #ffb347;
 }
 
-/* Tech Stack */
-.tech-showcase {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+/* ===== TECH STACK - EXACT MATCH TO IMAGE STYLE ===== */
+#tech-stack {
+  padding: 3rem 0;
 }
 
-.tech-category {
-  background: rgba(12, 20, 26, 0.65);
+.tech-category-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tech-category-item {
+  background: rgba(10, 18, 24, 0.65);
   backdrop-filter: blur(12px);
   border-radius: 1.5rem;
-  padding: 1.2rem;
-  flex: 1 1 200px;
-  min-width: 160px;
-  transition: 0.3s;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(44, 125, 160, 0.25);
+  transition: transform 0.2s, border-color 0.2s;
 }
 
-.tech-category:hover {
-  transform: translateY(-5px);
-  border-color: #ffb347;
+.tech-category-item:hover {
+  border-color: rgba(255, 180, 71, 0.5);
+  transform: translateY(-2px);
 }
 
-.tech-category h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+.tech-category-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #ffb347;
+  gap: 12px;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed rgba(44, 125, 160, 0.4);
+  padding-bottom: 0.6rem;
 }
 
-.tech-badge-container {
+.category-icon {
+  font-size: 1.5rem;
+  color: #ffb347;
+  background: rgba(255, 180, 71, 0.12);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.tech-category-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: #eef2ff;
+  margin: 0;
+}
+
+.tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px 14px;
 }
 
-.tech-badge {
-  background: #0f1a1f;
-  padding: 0.3rem 0.8rem;
-  border-radius: 30px;
-  font-size: 0.7rem;
+.tech-chip {
+  background: rgba(20, 30, 38, 0.8);
+  border-radius: 40px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  border: 1px solid #2c7da0;
+  gap: 8px;
+  color: #cdddfc;
+  border: 1px solid #2c4b5e;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
 }
 
-.tech-badge i {
+.tech-chip i {
+  font-size: 0.85rem;
   color: #ffb347;
+  width: 18px;
+  text-align: center;
+}
+
+.tech-chip:hover {
+  border-color: #ffb347;
+  background: rgba(44, 125, 160, 0.25);
+  transform: translateY(-1px);
 }
 
 /* Projects Grid */
@@ -484,7 +521,7 @@ section {
   gap: 8px;
 }
 
-/* Contact Section - User Friendly */
+/* Contact Section */
 .contact {
   background: rgba(10, 18, 24, 0.7);
   backdrop-filter: blur(14px);
@@ -492,7 +529,6 @@ section {
   margin: 0.5rem auto;
 }
 
-/* Quick Contact Cards */
 .quick-contact-cards {
   display: flex;
   flex-wrap: wrap;
@@ -558,7 +594,6 @@ section {
   color: #ffb347;
 }
 
-/* Contact Form Wrapper */
 .contact-form-wrapper {
   background: rgba(5, 10, 14, 0.6);
   border-radius: 1.5rem;
@@ -659,7 +694,6 @@ section {
   transform: translateY(-2px);
 }
 
-/* Availability Badge */
 .availability-badge {
   display: flex;
   justify-content: center;

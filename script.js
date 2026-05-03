@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact Form Handler with loading state
+  // Contact Form Handler
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   
@@ -254,12 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Show loading state
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
       submitBtn.disabled = true;
 
-      // Simulate small delay for better UX
       setTimeout(() => {
         sendEmailViaMailto(name, email, subject, message);
         showToast('📧 Opening your email app...', 'success');
@@ -270,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Menu Toggle - Improved
+  // Mobile Menu Toggle
   const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.getElementById('navLinks');
 
@@ -283,7 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
       icon.classList.toggle('fa-times');
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (navLinks.classList.contains('active') && 
           !navLinks.contains(e.target) && 
@@ -326,7 +323,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Close mobile menu if open
         if (navLinks.classList.contains('active')) {
           navLinks.classList.remove('active');
           if (menuToggle) {
