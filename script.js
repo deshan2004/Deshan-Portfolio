@@ -15,7 +15,7 @@ const projectsData = [
     name: "Neth-Sawan",
     shortDesc: "AI-driven accessibility for hearing impaired",
     fullDesc: "An AI-driven accessibility platform designed for the hearing impaired, providing real-time speech-to-sign language translation, object recognition, and sound visualization to bridge communication gaps.",
-    tech: ["React.js", "TensorFlow.js", "Web Speech API", "Python"],
+    tech: ["React.js", "TensorFlow.js", "Web Speech API", "Node.js", "Firebase"],
     features: ["Real-time speech-to-sign language translation", "Object recognition via camera", "Sound visualization for environment awareness", "Cross-platform accessible design"],
     repo: "https://github.com/deshan2004/Neth-Sawan",
     liveDemo: "https://neth-sawan.vercel.app/"
@@ -45,7 +45,7 @@ const projectsData = [
     name: "TailWatch",
     shortDesc: "Community stray dog care & rabies prevention",
     fullDesc: "A community-driven platform for stray dog care and rabies prevention. Enables stray dog registry, vaccination alerts, and community reporting to promote animal welfare and public health.",
-    tech: ["HTML5", "CSS3", "JavaScript", "Firebase"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Firebase" ,"map","PHP"],
     features: ["Stray dog registry with geolocation", "Vaccination reminder system", "Community rescue and incident reports", "Real-time data synchronization"],
     repo: "https://github.com/deshan2004/TailWatch",
     liveDemo: "https://deshan2004.github.io/TailWatch/"
@@ -55,7 +55,7 @@ const projectsData = [
     name: "Edu-Connect",
     shortDesc: "Comprehensive learning management system",
     fullDesc: "A full-featured learning management system connecting students and educators with course management, assignment tracking, and collaborative tools.",
-    tech: ["CSS", "JavaScript", "PHP", "MySQL"],
+    tech: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
     features: ["Course creation and enrollment", "Assignment submission & grading", "Discussion forums", "Progress analytics"],
     repo: "https://github.com/deshan2004/Edu-Connect",
     liveDemo: "https://edu-connect-rust-eta.vercel.app/"
