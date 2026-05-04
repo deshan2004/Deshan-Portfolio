@@ -5,7 +5,7 @@ const projectsData = [
     name: "ShelfLife-AI",
     shortDesc: "AI-powered retail inventory & expiry loss prevention",
     fullDesc: "An innovative AI-powered inventory management system that uses OCR technology and predictive analytics to eliminate expiry losses, digitize traditional stock tracking, and maximize profits for small-scale retailers.",
-    tech: ["React.js", "TensorFlow.js", "Node.js", "MongoDB", "OCR"],
+    tech: ["React.js", "TensorFlow.js", "Node.js", "Firebase", "OCR"],
     features: ["Expiry date prediction using ML models", "Real-time inventory dashboard with analytics", "Automated alerts for near-expiry items", "OCR-based digitization of stock records", "Waste reduction & profit maximization reports"],
     repo: "https://github.com/deshan2004/ShelfLife-AI",
     liveDemo: "https://shelf-life-ai-46q7.vercel.app/"
