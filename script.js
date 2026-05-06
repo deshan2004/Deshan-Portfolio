@@ -45,7 +45,7 @@ const projectsData = [
     name: "TailWatch",
     shortDesc: "Community stray dog care & rabies prevention",
     fullDesc: "A community-driven platform for stray dog care and rabies prevention. Enables stray dog registry, vaccination alerts, and community reporting to promote animal welfare and public health.",
-    tech: ["HTML5", "CSS3", "JavaScript", "Firebase" ,"map","PHP"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Firebase", "map", "PHP"],
     features: ["Stray dog registry with geolocation", "Vaccination reminder system", "Community rescue and incident reports", "Real-time data synchronization"],
     repo: "https://github.com/deshan2004/TailWatch",
     liveDemo: "https://deshan2004.github.io/TailWatch/"
@@ -108,6 +108,7 @@ FEATURED PROJECTS
 3. Sky Drifter - Celestial platformer game with Phaser 3
 4. CineMate - Movie discovery app with TMDB API
 5. TailWatch - Community platform for stray dog care
+6. Edu-Connect - Learning management system
 
 AVAILABILITY
 -----------
@@ -217,6 +218,90 @@ window.showProjectDetail = function(projectId) {
     if (e.target === modalDiv) closeModal();
   });
 };
+
+// ========== CHATBOT KNOWLEDGE BASE ==========
+const botResponses = {
+  skills: "Deshan is proficient in React.js, Node.js, PHP, Python, Java, MySQL, Firebase, MongoDB, and Tailwind. He's also skilled in Software QA (JUnit, JMeter) and AI integration (TensorFlow.js, Google Generative AI).",
+  projects: "His featured projects include ShelfLife-AI (inventory tracker), Neth-Sawan (accessibility platform), Sky Drifter (game), CineMate, TailWatch, and Edu-Connect. All are on his GitHub!",
+  experience: "Deshan is a BSc Software Engineering undergrad with hands-on experience building full-stack web apps, including employee management systems and community-driven platforms.",
+  contact: "You can reach Deshan via email: deshandhakshitha16@gmail.com, WhatsApp: +94 76 977 6315, or through LinkedIn on his portfolio.",
+  availability: "Deshan is open for remote and on-site opportunities, freelance collaborations, and full-time roles as a Full-Stack Developer or AI enthusiast.",
+  education: "He studies BSc (Hons) Software Engineering at CINEC Campus, Sri Lanka, with modules like Data Structures, Web Dev, SQA, and DBMS.",
+  qa: "Deshan practices manual testing, JUnit, Apache JMeter, and follows Agile SDLC for quality assurance.",
+  techstack: "His tech stack includes frontend: React, Angular, Tailwind; backend: Node, PHP, Python; databases: MySQL, PostgreSQL, Firebase, MongoDB; tools: Git, Figma, Vercel."
+};
+
+function getBotReply(userMessage) {
+  const lowerMsg = userMessage.toLowerCase();
+  if (lowerMsg.includes('skill') || lowerMsg.includes('technologies') || lowerMsg.includes('know') || lowerMsg.includes('proficient')) 
+    return botResponses.skills;
+  if (lowerMsg.includes('project') || lowerMsg.includes('built') || lowerMsg.includes('portfolio') || lowerMsg.includes('create')) 
+    return botResponses.projects;
+  if (lowerMsg.includes('experience') || lowerMsg.includes('work') || lowerMsg.includes('background')) 
+    return botResponses.experience;
+  if (lowerMsg.includes('contact') || lowerMsg.includes('email') || lowerMsg.includes('phone') || lowerMsg.includes('reach') || lowerMsg.includes('whatsapp')) 
+    return botResponses.contact;
+  if (lowerMsg.includes('available') || lowerMsg.includes('job') || lowerMsg.includes('opportunity') || lowerMsg.includes('hire') || lowerMsg.includes('open')) 
+    return botResponses.availability;
+  if (lowerMsg.includes('education') || lowerMsg.includes('study') || lowerMsg.includes('university') || lowerMsg.includes('degree')) 
+    return botResponses.education;
+  if (lowerMsg.includes('qa') || lowerMsg.includes('testing') || lowerMsg.includes('quality') || lowerMsg.includes('junit')) 
+    return botResponses.qa;
+  if (lowerMsg.includes('stack') || lowerMsg.includes('framework') || lowerMsg.includes('database') || lowerMsg.includes('tools')) 
+    return botResponses.techstack;
+  if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey') || lowerMsg.includes('greetings')) 
+    return "Hello! 👋 I'm your AI assistant. Ask me about Deshan's skills, projects, or how to connect with him!";
+  if (lowerMsg.includes('thanks') || lowerMsg.includes('thank')) 
+    return "You're very welcome! 😊 Feel free to ask anything else about Deshan.";
+  if (lowerMsg.includes('who are you') || lowerMsg.includes('your name')) 
+    return "I'm Deshan's AI assistant! I'm here to help you learn more about his work, skills, and how to get in touch.";
+  
+  return "I can tell you about Deshan's full-stack expertise, featured projects (like ShelfLife-AI, Neth-Sawan), his contact info, or his QA/Testing skills! What would you like to know?";
+}
+
+// Chatbot Functions
+function addChatMessage(text, isUser) {
+  const chatMessages = document.getElementById('chatMessages');
+  const msgDiv = document.createElement('div');
+  msgDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+  const bubble = document.createElement('div');
+  bubble.className = 'message-bubble';
+  bubble.innerText = text;
+  msgDiv.appendChild(bubble);
+  chatMessages.appendChild(msgDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTypingIndicator() {
+  const chatMessages = document.getElementById('chatMessages');
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'message bot';
+  typingDiv.id = 'typingIndic';
+  typingDiv.innerHTML = `<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+  chatMessages.appendChild(typingDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTypingIndicator() {
+  const typingIndic = document.getElementById('typingIndic');
+  if (typingIndic) typingIndic.remove();
+}
+
+function handleUserMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+  
+  addChatMessage(text, true);
+  input.value = '';
+  
+  showTypingIndicator();
+  setTimeout(() => {
+    removeTypingIndicator();
+    const reply = getBotReply(text);
+    addChatMessage(reply, false);
+  }, 600 + Math.random() * 400);
+}
 
 // Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -334,4 +419,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ========== CHATBOT EVENT LISTENERS ==========
+  const chatToggleBtn = document.getElementById('chatToggleBtn');
+  const chatWindow = document.getElementById('chatWindow');
+  const closeChatBtn = document.getElementById('closeChatBtn');
+  const chatSendBtn = document.getElementById('chatSendBtn');
+  const chatInput = document.getElementById('chatInput');
+
+  if (chatToggleBtn) {
+    chatToggleBtn.addEventListener('click', () => {
+      chatWindow.classList.toggle('hidden');
+    });
+  }
+
+  if (closeChatBtn) {
+    closeChatBtn.addEventListener('click', () => {
+      chatWindow.classList.add('hidden');
+    });
+  }
+
+  if (chatSendBtn) {
+    chatSendBtn.addEventListener('click', handleUserMessage);
+  }
+
+  if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleUserMessage();
+      }
+    });
+  }
 });
