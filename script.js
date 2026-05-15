@@ -135,16 +135,6 @@ CONTACT
   showToast('✅ CV downloaded successfully!', 'success');
 }
 
-// Send email via mailto
-function sendEmailViaMailto(name, email, subject, message) {
-  const recipient = 'deshandhakshitha16@gmail.com';
-  const mailtoSubject = `Portfolio Contact: ${subject}`;
-  const mailtoBody = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}%0A%0A---%0ASent from portfolio website.`;
-  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
-  window.location.href = mailtoLink;
-  return true;
-}
-
 // Render Projects
 function renderProjects() {
   const grid = document.getElementById('projectGrid');
@@ -232,7 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact Form Handler
+  // EmailJS Initialize
+  emailjs.init("Za9-uzgxungOP5w6t");
+
+  // Contact Form Handler with EmailJS
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   
@@ -245,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = document.getElementById('senderSubject')?.value.trim();
       const message = document.getElementById('senderMessage')?.value.trim();
 
+      // Validation
       if (!name || !email || !subject || !message) {
         showToast('⚠️ Please fill in all fields', 'error');
         return;
@@ -255,17 +249,36 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Button Loading State
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        sendEmailViaMailto(name, email, subject, message);
-        showToast('📧 Opening your email app...', 'success');
-        contactForm.reset();
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }, 500);
+      // Parameters matching your EmailJS Template variables ({{name}}, {{email}}, {{title}}, {{message}})
+      const params = {
+          name: name,
+          email: email,
+          title: subject,
+          message: message
+      };
+
+      const serviceID = "service_f05u4hw"; 
+      const templateID = "template_ecldo8l"; 
+
+      // Send via EmailJS
+      emailjs.send(serviceID, templateID, params)
+          .then(() => {
+              showToast('✅ Message sent successfully!', 'success');
+              contactForm.reset();
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+          })
+          .catch((err) => {
+              console.error("EmailJS Error:", err);
+              showToast('❌ Failed to send message. Please try again.', 'error');
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+          });
     });
   }
 
@@ -336,83 +349,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-  window.botpressWebChat.onEvent(function (event) {
-    if (event.type === 'LIFECYCLE.LOADED') {
-      window.botpressWebChat.sendEvent({ type: 'hide' });
+
+// Botpress Chatbot Code
+window.botpressWebChat.onEvent(function (event) {
+  if (event.type === 'LIFECYCLE.LOADED') {
+    window.botpressWebChat.sendEvent({ type: 'hide' });
+  }
+}, ['LIFECYCLE.LOADED']);
+
+window.openChatbot = function() {
+  if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
+    window.botpressWebChat.sendEvent({ type: 'show' });
+    return;
+  }
+  
+  const toastElem = document.getElementById('toast');
+  const showMsg = (msg, isError = false) => {
+    if (toastElem) {
+      toastElem.textContent = msg;
+      toastElem.classList.add('show');
+      toastElem.style.borderLeftColor = isError ? '#ef4444' : '#ffb347';
+      setTimeout(() => toastElem.classList.remove('show'), 2800);
+    } else {
+      alert(msg);
     }
-  }, ['LIFECYCLE.LOADED']);
- window.openChatbot = function() {
+  };
+  
+  showMsg("🤖 Chat is initializing, please wait...");
+  let attempts = 0;
+  const interval = setInterval(() => {
     if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
       window.botpressWebChat.sendEvent({ type: 'show' });
-      return;
+      clearInterval(interval);
+    } else if (attempts >= 12) {
+      clearInterval(interval);
+      showMsg("❌ Chat assistant temporarily unavailable.", true);
     }
-    const toastElem = document.getElementById('toast');
-    const showMsg = (msg, isError = false) => {
-      if (toastElem) {
-        toastElem.textContent = msg;
-        toastElem.classList.add('show');
-        toastElem.style.borderLeftColor = isError ? '#ef4444' : '#ffb347';
-        setTimeout(() => toastElem.classList.remove('show'), 2800);
-      } else alert(msg);
-    };
-    showMsg("🤖 Chat is initializing, please wait...");
-    let attempts = 0;
-    const interval = setInterval(() => {
-      if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
-        window.botpressWebChat.sendEvent({ type: 'show' });
-        clearInterval(interval);
-      } else if (attempts >= 12) {
-        clearInterval(interval);
-        showMsg("❌ Chat assistant temporarily unavailable. Send an email instead!", true);
-      }
-      attempts++;
-    }, 500);
-  };
-  if (window.botpressWebChat) {
-    window.botpressWebChat.onEvent(function (event) {
-      if (event.type === 'LIFECYCLE.LOADED') window.botpressWebChat.sendEvent({ type: 'hide' });
-    }, ['LIFECYCLE.LOADED']);
-  } else {
-    const waitForBP = setInterval(() => {
-      if (window.botpressWebChat?.onEvent) {
-        window.botpressWebChat.onEvent(function (event) {
-          if (event.type === 'LIFECYCLE.LOADED') window.botpressWebChat.sendEvent({ type: 'hide' });
-        }, ['LIFECYCLE.LOADED']);
-        clearInterval(waitForBP);
-      }
-    }, 300);
-    setTimeout(() => clearInterval(waitForBP), 8000);
-  }
+    attempts++;
+  }, 500);
+};
 
-  // 1. EmailJS initialize කිරීම (මෙතනට Public Key එක දාන්න)
-(function() {
-    emailjs.init("Za9-uzgxungOP5w6t"); 
-})();
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const btn = document.getElementById('submitBtn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-    // Form data එකතු කරගැනීම
-    const params = {
-        from_name: document.getElementById('senderName').value,
-        reply_to: document.getElementById('senderEmail').value,
-        subject: document.getElementById('senderSubject').value,
-        message: document.getElementById('senderMessage').value
-    };
-
-    const serviceID = "service_f05u4hw"; // ඔයාගේ Service ID
-    const templateID = "template_ecldo8l"; // ඔයාගේ Template ID
-
-    emailjs.send(serviceID, templateID, params)
-        .then(() => {
-            btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-            alert("Message sent successfully!");
-            document.getElementById('contactForm').reset();
-        })
-        .catch((err) => {
-            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-            alert("Error: " + JSON.stringify(err));
-        });
-});
+if (window.botpressWebChat) {
+  window.botpressWebChat.onEvent(function (event) {
+    if (event.type === 'LIFECYCLE.LOADED') window.botpressWebChat.sendEvent({ type: 'hide' });
+  }, ['LIFECYCLE.LOADED']);
+} else {
+  const waitForBP = setInterval(() => {
+    if (window.botpressWebChat?.onEvent) {
+      window.botpressWebChat.onEvent(function (event) {
+        if (event.type === 'LIFECYCLE.LOADED') window.botpressWebChat.sendEvent({ type: 'hide' });
+      }, ['LIFECYCLE.LOADED']);
+      clearInterval(waitForBP);
+    }
+  }, 300);
+  setTimeout(() => clearInterval(waitForBP), 8000);
+}
