@@ -20,6 +20,49 @@
     <source src="https://cdn.pixabay.com/video/2021/04/12/70860-537449767_large.mp4" type="video/mp4">
   </video>
 </div>
+<div id="chat-button-container" onclick="window.botpressWebChat.sendEvent({ type: 'show' })">
+    <div class="chat-text">Chat with AI</div>
+    <div class="chat-icon">
+        <img src="ඔයාගේ_අර_රොබෝ_පින්තූරයේ_link_එක" alt="bot">
+    </div>
+</div>
+
+<style>
+#chat-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 123, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 123, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+#chat-button-container:hover {
+    background: rgba(0, 123, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.chat-text {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.chat-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+}
+</style>
 <div class="overlay"></div>
 
 <nav>

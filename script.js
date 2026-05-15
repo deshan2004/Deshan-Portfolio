@@ -336,3 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+  window.botpressWebChat.onEvent(function (event) {
+    if (event.type === 'LIFECYCLE.LOADED') {
+      window.botpressWebChat.sendEvent({ type: 'hide' });
+    }
+  }, ['LIFECYCLE.LOADED']);
