@@ -383,3 +383,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
     setTimeout(() => clearInterval(waitForBP), 8000);
   }
+
+  // 1. EmailJS initialize කිරීම (මෙතනට Public Key එක දාන්න)
+(function() {
+    emailjs.init("Za9-uzgxungOP5w6t"); 
+})();
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    // Form data එකතු කරගැනීම
+    const params = {
+        from_name: document.getElementById('senderName').value,
+        reply_to: document.getElementById('senderEmail').value,
+        subject: document.getElementById('senderSubject').value,
+        message: document.getElementById('senderMessage').value
+    };
+
+    const serviceID = "service_f05u4hw"; // ඔයාගේ Service ID
+    const templateID = "template_ecldo8l"; // ඔයාගේ Template ID
+
+    emailjs.send(serviceID, templateID, params)
+        .then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+            alert("Message sent successfully!");
+            document.getElementById('contactForm').reset();
+        })
+        .catch((err) => {
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            alert("Error: " + JSON.stringify(err));
+        });
+});
