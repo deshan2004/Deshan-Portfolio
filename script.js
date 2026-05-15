@@ -341,3 +341,45 @@ document.addEventListener('DOMContentLoaded', () => {
       window.botpressWebChat.sendEvent({ type: 'hide' });
     }
   }, ['LIFECYCLE.LOADED']);
+ window.openChatbot = function() {
+    if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
+      window.botpressWebChat.sendEvent({ type: 'show' });
+      return;
+    }
+    const toastElem = document.getElementById('toast');
+    const showMsg = (msg, isError = false) => {
+      if (toastElem) {
+        toastElem.textContent = msg;
+        toastElem.classList.add('show');
+        toastElem.style.borderLeftColor = isError ? '#ef4444' : '#ffb347';
+        setTimeout(() => toastElem.classList.remove('show'), 2800);
+      } else alert(msg);
+    };
+    showMsg("🤖 Chat is initializing, please wait...");
+    let attempts = 0;
+    const interval = setInterval(() => {
+      if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
+        window.botpressWebChat.sendEvent({ type: 'show' });
+        clearInterval(interval);
+      } else if (attempts >= 12) {
+        clearInterval(interval);
+        showMsg("❌ Chat assistant temporarily unavailable. Send an email instead!", true);
+      }
+      attempts++;
+    }, 500);
+  };
+  if (window.botpressWebChat) {
+    window.botpressWebChat.onEvent(function (event) {
+      if (event.type === 'LIFECYCLE.LOADED') window.botpressWebChat.sendEvent({ type: 'hide' });
+    }, ['LIFECYCLE.LOADED']);
+  } else {
+    const waitForBP = setInterval(() => {
+      if (window.botpressWebChat?.onEvent) {
+        window.botpressWebChat.onEvent(function (event) {
+          if (event.type === 'LIFECYCLE.LOADED') window.botpressWebChat.sendEvent({ type: 'hide' });
+        }, ['LIFECYCLE.LOADED']);
+        clearInterval(waitForBP);
+      }
+    }, 300);
+    setTimeout(() => clearInterval(waitForBP), 8000);
+  }
