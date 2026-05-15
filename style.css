@@ -919,4 +919,74 @@ footer {
     background: linear-gradient(135deg, #ffb347, #e69422);
     color: #0a0c10;
     border-color: white;
+}/* Chatbot Button - Human-like style */
+#chat-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: rgba(44, 125, 160, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 180, 71, 0.5);
+    padding: 10px 20px;
+    border-radius: 60px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+#chat-button-container:hover {
+    background: rgba(255, 180, 71, 0.25);
+    border-color: #ffb347;
+    transform: scale(1.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+}
+
+.chat-text {
+    color: #f0f4ff;
+    font-family: 'Inter', sans-serif;
+    margin-right: 14px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: -0.2px;
+}
+
+/* Human-like icon styles (user-circle or headset) */
+.chat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-icon i {
+    font-size: 26px;
+    color: #ffecd6;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c7da0, #1f5e7a);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 180, 71, 0.6);
+    transition: 0.2s;
+}
+
+/* Optional: use a human-like emoji or avatar background if you prefer an image */
+.chat-icon img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 180, 71, 0.6);
+    background: linear-gradient(135deg, #2c7da0, #1f5e7a);
+}
+
+#chat-button-container:hover .chat-icon i,
+#chat-button-container:hover .chat-icon img {
+    background: linear-gradient(135deg, #ffb347, #e69422);
+    color: #0a0c10;
+    border-color: white;
 }
