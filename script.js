@@ -74,64 +74,14 @@ function showToast(message, type = 'success') {
   }, 3500);
 }
 
-// Generate and Download CV
-function generateAndDownloadCV() {
-  const cvContent = `DESHAN SIRIWARDHANA
-======================
-
-📍 Based in Sri Lanka
-📧 deshandhakshitha16@gmail.com
-📱 +94 76 977 6315
-🔗 github.com/deshan2004
-
-PROFESSIONAL SUMMARY
--------------------
-Software Engineering undergraduate passionate about Full-Stack Development, AI Integration, and Software Quality Assurance.
-
-EDUCATION
----------
-🎓 BSc (Hons) in Software Engineering (UGC Approved)
-   • Expected Graduation: 2026
-
-TECHNICAL SKILLS
----------------
-• Languages: JavaScript, Python, PHP, Java, HTML5, CSS3
-• Frameworks: React.js, Angular, Node.js, Express.js
-• Databases: MySQL, MongoDB, Firebase, PostgreSQL
-• AI/ML: TensorFlow.js, Web Speech API, OCR
-• QA Tools: Selenium, Manual Testing, JUnit
-
-FEATURED PROJECTS
-----------------
-1. ShelfLife-AI - AI-powered inventory management system
-2. Neth-Sawan - Accessibility platform with speech-to-sign
-3. Sky Drifter - Celestial platformer game with Phaser 3
-4. CineMate - Movie discovery app with TMDB API
-5. TailWatch - Community platform for stray dog care
-6. Edu-Connect - Learning management system
-
-AVAILABILITY
------------
-✅ Open for Remote & On-site opportunities
-✅ Available for freelance and collaborations
-
-CONTACT
--------
-📧 deshandhakshitha16@gmail.com
-💬 WhatsApp: +94 76 977 6315
-
----
-© 2026 Deshan Siriwardhana`;
-
-  const blob = new Blob([cvContent], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'Deshan_Siriwardhana_CV.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+// Download PDF CV Directly
+function downloadPDFCV() {
+  const link = document.createElement('a');
+  link.href = 'CV.pdf'; // ඔයාගේ ඇත්තම CV.pdf එක තියෙන තැන
+  link.download = 'Deshan_Siriwardhana_CV.pdf'; // ඩවුන්ලෝඩ් වෙද්දී සේව් වෙන නම
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
   showToast('✅ CV downloaded successfully!', 'success');
 }
 
@@ -218,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cvBtn) {
     cvBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      generateAndDownloadCV();
+      downloadPDFCV(); // දැන් කෙලින්ම PDF එක ඩවුන්ලෝඩ් වෙන function එක වැඩ කරන්නේ
     });
   }
 
