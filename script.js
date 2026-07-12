@@ -8,7 +8,7 @@ const projectsData = [
     tech: ["React.js", "TensorFlow.js", "Node.js", "Firebase", "OCR"],
     features: ["Expiry date prediction using ML models", "Real-time inventory dashboard with analytics", "Automated alerts for near-expiry items", "OCR-based digitization of stock records", "Waste reduction & profit maximization reports"],
     repo: "https://github.com/deshan2004/ShelfLife-AI",
-    liveDemo: "https://shelf-life-ai-46q7.vercel.app/"
+    liveDemo: "https://shelf-life-ai.vercel.app/"
   },
   {
     id: "neth-sawan",
