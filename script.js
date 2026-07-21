@@ -5,7 +5,7 @@ const projectsData = [
     name: "ShelfLife-AI",
     shortDesc: "AI-powered retail inventory & expiry loss prevention",
     fullDesc: "An innovative AI-powered inventory management system that uses OCR technology and predictive analytics to eliminate expiry losses, digitize traditional stock tracking, and maximize profits for small-scale retailers.",
-    tech: ["React.js", "TensorFlow.js", "Node.js", "Firebase", "OCR"],
+    tech: ["React.js", "Tesseract.js", "ZXing Library", "Node.js", "Firebase", "OCR"],
     features: ["Expiry date prediction using ML models", "Real-time inventory dashboard with analytics", "Automated alerts for near-expiry items", "OCR-based digitization of stock records", "Waste reduction & profit maximization reports"],
     repo: "https://github.com/deshan2004/ShelfLife-AI",
     liveDemo: "https://shelf-life-ai.vercel.app/"
@@ -95,7 +95,7 @@ function renderProjects() {
     const card = document.createElement('div');
     card.className = 'project-card';
 
-    const techChips = proj.tech.slice(0, 2).map(t => 
+    const techChips = proj.tech.slice(0, 2).map(t =>
       `<span style="background:#1e2a3a; padding:2px 10px; border-radius:20px; font-size:0.7rem; margin-right:6px; display:inline-block;">${t}</span>`
     ).join('');
 
@@ -117,18 +117,18 @@ function renderProjects() {
 }
 
 // Show Project Details Modal
-window.showProjectDetail = function(projectId) {
+window.showProjectDetail = function (projectId) {
   const project = projectsData.find(p => p.id === projectId);
   if (!project) return;
 
   const modalDiv = document.createElement('div');
   modalDiv.className = 'modal-glass';
 
-  const techsHtml = project.tech.map(t => 
+  const techsHtml = project.tech.map(t =>
     `<span style="background:#1f2e38; margin:3px; padding:3px 12px; border-radius:30px; font-size:0.7rem; display:inline-block;">${t}</span>`
   ).join('');
 
-  const featuresHtml = project.features.map(f => 
+  const featuresHtml = project.features.map(f =>
     `<div style="margin-bottom: 8px;"><i class="fas fa-caret-right" style="color:#ffb347;"></i> ${f}</div>`
   ).join('');
 
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact Form Handler with EmailJS
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
-  
+
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -206,29 +206,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Parameters matching your EmailJS Template variables ({{name}}, {{email}}, {{title}}, {{message}})
       const params = {
-          name: name,
-          email: email,
-          title: subject,
-          message: message
+        name: name,
+        email: email,
+        title: subject,
+        message: message
       };
 
-      const serviceID = "service_f05u4hw"; 
-      const templateID = "template_ecldo8l"; 
+      const serviceID = "service_f05u4hw";
+      const templateID = "template_ecldo8l";
 
       // Send via EmailJS
       emailjs.send(serviceID, templateID, params)
-          .then(() => {
-              showToast('✅ Message sent successfully!', 'success');
-              contactForm.reset();
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-          })
-          .catch((err) => {
-              console.error("EmailJS Error:", err);
-              showToast('❌ Failed to send message. Please try again.', 'error');
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-          });
+        .then(() => {
+          showToast('✅ Message sent successfully!', 'success');
+          contactForm.reset();
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        })
+        .catch((err) => {
+          console.error("EmailJS Error:", err);
+          showToast('❌ Failed to send message. Please try again.', 'error');
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
     });
   }
 
@@ -246,9 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (e) => {
-      if (navLinks.classList.contains('active') && 
-          !navLinks.contains(e.target) && 
-          !menuToggle.contains(e.target)) {
+      if (navLinks.classList.contains('active') &&
+        !navLinks.contains(e.target) &&
+        !menuToggle.contains(e.target)) {
         navLinks.classList.remove('active');
         const icon = menuToggle.querySelector('i');
         icon.classList.add('fa-bars');
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll Reveal Animations using IntersectionObserver
   const revealElements = document.querySelectorAll('.reveal');
-  
+
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -325,12 +325,12 @@ window.botpressWebChat.onEvent(function (event) {
   }
 }, ['LIFECYCLE.LOADED']);
 
-window.openChatbot = function() {
+window.openChatbot = function () {
   if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
     window.botpressWebChat.sendEvent({ type: 'show' });
     return;
   }
-  
+
   const toastElem = document.getElementById('toast');
   const showMsg = (msg, isError = false) => {
     if (toastElem) {
@@ -342,7 +342,7 @@ window.openChatbot = function() {
       alert(msg);
     }
   };
-  
+
   showMsg("🤖 Chat is initializing, please wait...");
   let attempts = 0;
   const interval = setInterval(() => {
