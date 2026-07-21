@@ -65,7 +65,7 @@ const projectsData = [
     name: "CodePulse",
     shortDesc: "Automated SQA Dashboard with SonarQube",
     fullDesc: "Automated Software Quality Assurance (SQA) Dashboard built with FastAPI, Next.js, and SonarQube. Automates code scanning, tracks quality/security metrics, and monitors performance endpoints in real-time.",
-    tech: ["FastAPI", "Next.js", "Python", "SonarQube"],
+    tech: ["FastAPI", "Next.js", "Python", "SonarQube", "TypeScript", "PostgreSQL"],
     features: ["Real-time code scanning and security metrics", "Automated tracking of SQA standards", "Performance endpoint monitoring", "Interactive dashboard UI"],
     repo: "https://github.com/deshan2004/CodePulse",
     liveDemo: "https://code-pulse-jzq7.vercel.app/"
@@ -105,7 +105,7 @@ const projectsData = [
     name: "Kingswood Connect",
     shortDesc: "Community platform for Kingswood",
     fullDesc: "A dedicated community and networking platform built for Kingswood. Features a modern, responsive user interface and seamless integration for users to connect and interact.",
-    tech: ["JavaScript", "React.js", "Vercel"],
+    tech: ["JavaScript", "React.js", "Vercel", "FireBase"],
     features: ["Responsive community networking interface", "Real-time updates", "Optimized performance and SEO", "Modern UI/UX design"],
     repo: "https://github.com/deshan2004/Kingswood-Connect",
     liveDemo: "https://kingswood-connect.vercel.app"
@@ -115,7 +115,7 @@ const projectsData = [
     name: "Ultimate Guessing Game",
     shortDesc: "Modular Python game application",
     fullDesc: "A modular, menu-driven Python application featuring multiple mini-games including Number Guessing, Wordman-style Word Guessing, and a Code Breaker game. Built with Streamlit for a web-based GUI.",
-    tech: ["Python", "Streamlit", "Game Dev"],
+    tech: ["Python", "Streamlit", "Game Dev", "MongoDB Atlas"],
     features: ["Menu-driven multi-game architecture", "Number and word guessing mechanics", "Code breaker logic", "Interactive web GUI with Streamlit"],
     repo: "https://github.com/deshan2004/Ultimate-Guessing-Game-Python",
     liveDemo: "https://ultimate-guessing-game-python-ufca4jfzddoh3ovzjwg9dm.streamlit.app/"
