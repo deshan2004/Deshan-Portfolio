@@ -16,7 +16,11 @@
 </head>
 <body>
 
-<div id="particles-js" class="video-background" style="background-color: #030508;"></div>
+<div class="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
 
 <!-- Fixed Chatbot Button (no broken image, uses Font Awesome icon) -->
 <div id="chat-button-container" onclick="openChatbot()">
@@ -283,8 +287,6 @@
 
 <div id="toast" class="toast"></div>
 
-<!-- Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
 
 </body>
