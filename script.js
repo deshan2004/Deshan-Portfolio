@@ -99,6 +99,26 @@ const projectsData = [
     features: ["Comprehensive test coverage for banking logic", "JUnit 5 assertions and test lifecycles", "Detailed test reports", "Edge case validation"],
     repo: "https://github.com/deshan2004/BankAccount-Unit-Testing-JUnit",
     liveDemo: "#"
+  },
+  {
+    id: "kingswood-connect",
+    name: "Kingswood Connect",
+    shortDesc: "Community platform for Kingswood",
+    fullDesc: "A dedicated community and networking platform built for Kingswood. Features a modern, responsive user interface and seamless integration for users to connect and interact.",
+    tech: ["JavaScript", "React.js", "Vercel"],
+    features: ["Responsive community networking interface", "Real-time updates", "Optimized performance and SEO", "Modern UI/UX design"],
+    repo: "https://github.com/deshan2004/Kingswood-Connect",
+    liveDemo: "https://kingswood-connect.vercel.app"
+  },
+  {
+    id: "ultimate-guessing-game",
+    name: "Ultimate Guessing Game",
+    shortDesc: "Modular Python game application",
+    fullDesc: "A modular, menu-driven Python application featuring multiple mini-games including Number Guessing, Wordman-style Word Guessing, and a Code Breaker game. Built with Streamlit for a web-based GUI.",
+    tech: ["Python", "Streamlit", "Game Dev"],
+    features: ["Menu-driven multi-game architecture", "Number and word guessing mechanics", "Code breaker logic", "Interactive web GUI with Streamlit"],
+    repo: "https://github.com/deshan2004/Ultimate-Guessing-Game-Python",
+    liveDemo: "https://ultimate-guessing-game-python-ufca4jfzddoh3ovzjwg9dm.streamlit.app/"
   }
 ];
 
