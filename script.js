@@ -59,6 +59,46 @@ const projectsData = [
     features: ["Course creation and enrollment", "Assignment submission & grading", "Discussion forums", "Progress analytics"],
     repo: "https://github.com/deshan2004/Edu-Connect",
     liveDemo: "https://edu-connect-rust-eta.vercel.app/"
+  },
+  {
+    id: "codepulse",
+    name: "CodePulse",
+    shortDesc: "Automated SQA Dashboard with SonarQube",
+    fullDesc: "Automated Software Quality Assurance (SQA) Dashboard built with FastAPI, Next.js, and SonarQube. Automates code scanning, tracks quality/security metrics, and monitors performance endpoints in real-time.",
+    tech: ["FastAPI", "Next.js", "Python", "SonarQube"],
+    features: ["Real-time code scanning and security metrics", "Automated tracking of SQA standards", "Performance endpoint monitoring", "Interactive dashboard UI"],
+    repo: "https://github.com/deshan2004/CodePulse",
+    liveDemo: "https://code-pulse-jzq7.vercel.app/"
+  },
+  {
+    id: "ecommerce-testing",
+    name: "E-commerce Search Automation",
+    shortDesc: "Automated UI testing with Selenium",
+    fullDesc: "Automated UI testing project to verify e-commerce product search features using Selenium WebDriver and Maven build tool. Ensures high software quality by automating core user flows.",
+    tech: ["Java", "Selenium", "Maven", "SQA"],
+    features: ["Automated product search verification", "Integration with Maven build lifecycle", "Detailed test reporting", "Robust UI interaction handling"],
+    repo: "https://github.com/deshan2004/E-commerce-Website-Search-Automation",
+    liveDemo: "#"
+  },
+  {
+    id: "chatbot-learnbot",
+    name: "LearnBot",
+    shortDesc: "Interactive programming learning platform",
+    fullDesc: "LearnBot is a desktop-based interactive learning platform designed to help beginners master programming concepts. Built with Python and Tkinter, providing real-world analogies and assessments.",
+    tech: ["Python", "Tkinter", "Desktop App"],
+    features: ["Structured learning paths for coding", "Built-in assessment system", "Real-world programming analogies", "Interactive desktop UI"],
+    repo: "https://github.com/deshan2004/ChatBot",
+    liveDemo: "#"
+  },
+  {
+    id: "bankaccount-junit",
+    name: "BankAccount JUnit Testing",
+    shortDesc: "Unit testing implementation with JUnit 5",
+    fullDesc: "Unit testing implementation and comprehensive reporting for a Java BankAccount system using the JUnit 5 framework. Focuses on clean code and robust software quality assurance.",
+    tech: ["Java", "JUnit 5", "Unit Testing", "SQA"],
+    features: ["Comprehensive test coverage for banking logic", "JUnit 5 assertions and test lifecycles", "Detailed test reports", "Edge case validation"],
+    repo: "https://github.com/deshan2004/BankAccount-Unit-Testing-JUnit",
+    liveDemo: "#"
   }
 ];
 
