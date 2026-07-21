@@ -145,13 +145,17 @@ function downloadPDFCV() {
   showToast('✅ CV downloaded successfully!', 'success');
 }
 
+let isShowingAllProjects = false;
+
 // Render Projects
 function renderProjects() {
   const grid = document.getElementById('projectGrid');
   if (!grid) return;
   grid.innerHTML = '';
 
-  projectsData.forEach(proj => {
+  const projectsToShow = isShowingAllProjects ? projectsData : projectsData.slice(0, 6);
+
+  projectsToShow.forEach(proj => {
     const card = document.createElement('div');
     card.className = 'project-card';
 
@@ -222,6 +226,18 @@ window.showProjectDetail = function (projectId) {
 // Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
+
+  // Show More Projects Logic
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', () => {
+      isShowingAllProjects = !isShowingAllProjects;
+      renderProjects();
+      showMoreBtn.innerHTML = isShowingAllProjects ? 
+        'Show Less Projects <i class="fas fa-chevron-up"></i>' : 
+        'Show More Projects <i class="fas fa-chevron-down"></i>';
+    });
+  }
 
   // CV Download Button
   const cvBtn = document.getElementById('downloadCvBtn');
