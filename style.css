@@ -137,16 +137,18 @@ nav {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 75px;
+  top: 120%;
   left: 0;
   width: 100%;
-  background: rgba(5, 8, 12, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 2rem 1.5rem;
+  background: rgba(8, 12, 18, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1.5rem;
   text-align: center;
-  gap: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 1rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   z-index: 999;
   list-style: none;
 }
