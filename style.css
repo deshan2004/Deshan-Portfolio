@@ -370,8 +370,7 @@ section {
   object-fit: cover;
   transition: all 0.5s ease;
   filter: contrast(1.1) saturate(1.15) brightness(1.05) drop-shadow(0 15px 25px rgba(6, 182, 212, 0.3));
-  -webkit-mask-image: radial-gradient(ellipse 30% 60% at 50% 50%, black 20%, transparent 55%);
-  mask-image: radial-gradient(ellipse 30% 60% at 50% 50%, black 20%, transparent 55%);
+  border-radius: 20px;
 }
 
 .profile-frame:hover .profile-photo {
