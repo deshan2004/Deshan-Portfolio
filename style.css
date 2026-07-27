@@ -369,13 +369,34 @@ section {
   height: 260px;
   object-fit: cover;
   border-radius: 2rem;
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.5s ease;
+  box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  transition: all 0.5s ease;
+  filter: grayscale(15%) contrast(1.05) brightness(0.95);
 }
 
 .profile-frame:hover .profile-photo {
   transform: scale(1.02) rotate(1deg);
+  box-shadow: 0 25px 50px -10px rgba(6, 182, 212, 0.6), 0 0 40px rgba(139, 92, 246, 0.4);
+}
+
+.profile-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(139, 92, 246, 0.8));
+  border-radius: 2rem;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.profile-frame:hover::after {
+  opacity: 0.2;
 }
 
 .profile-status {
