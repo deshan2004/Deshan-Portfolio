@@ -242,9 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // CV Download Button
   const cvBtn = document.getElementById('downloadCvBtn');
   if (cvBtn) {
-    cvBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      downloadPDFCV(); // දැන් කෙලින්ම PDF එක ඩවුන්ලෝඩ් වෙන function එක වැඩ කරන්නේ
+    cvBtn.addEventListener('click', () => {
+      showToast('✅ CV downloaded successfully!', 'success');
     });
   }
 
