@@ -138,7 +138,7 @@ function showToast(message, type = 'success') {
 function downloadPDFCV() {
   const link = document.createElement('a');
   link.href = 'CV.pdf'; // ඔයාගේ ඇත්තම CV.pdf එක තියෙන තැන
-  link.download = 'Deshan_Siriwardhana_CV.pdf'; // ඩවුන්ලෝඩ් වෙද්දී සේව් වෙන නම
+  link.download = 'deshan siriwardhana cv.pdf'; // ඩවුන්ලෝඩ් වෙද්දී සේව් වෙන නම
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
