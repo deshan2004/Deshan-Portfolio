@@ -11,6 +11,32 @@ const projectsData = [
     liveDemo: "https://shelf-life-ai.vercel.app/"
   },
   {
+    id: "kethpiyasa",
+    name: "KethPiyasa (කෙත්පියස)",
+    shortDesc: "Direct Farmer-to-Buyer B2B Agricultural Marketplace",
+    fullDesc: "A full-stack B2B agricultural digital marketplace platform engineered to streamline Sri Lanka's agricultural supply chain. Bridges smallholder farmers directly with commercial buyers, eliminating intermediary exploitation, facilitating forward contracts, and providing escrow-secured settlements.",
+    tech: ["TypeScript", "React.js", "Next.js", "Tailwind CSS", "Vercel"],
+    features: [
+      "Farmer produce & pre-harvest yield listings with quality grading (A/B/C)",
+      "Direct price quotation & real-time negotiation bidding engine",
+      "Buyer discovery filtering by crop variety, harvest timeline & proximity",
+      "Escrow-secured settlement management to protect transaction integrity",
+      "Dynamic agricultural market analytics and pricing transparency"
+    ],
+    repo: "https://github.com/deshan2004/KethPiyasa",
+    liveDemo: "https://keth-piyasa.vercel.app"
+  },
+  {
+    id: "codepulse",
+    name: "CodePulse",
+    shortDesc: "Automated SQA Dashboard with SonarQube",
+    fullDesc: "Automated Software Quality Assurance (SQA) Dashboard built with FastAPI, Next.js, and SonarQube. Automates code scanning, tracks quality/security metrics, and monitors performance endpoints in real-time.",
+    tech: ["FastAPI", "Next.js", "Python", "SonarQube", "TypeScript", "PostgreSQL"],
+    features: ["Real-time code scanning and security metrics", "Automated tracking of SQA standards", "Performance endpoint monitoring", "Interactive dashboard UI"],
+    repo: "https://github.com/deshan2004/CodePulse",
+    liveDemo: "https://code-pulse-jzq7.vercel.app/"
+  },
+  {
     id: "neth-sawan",
     name: "Neth-Sawan",
     shortDesc: "AI-driven accessibility for hearing impaired",
@@ -21,6 +47,22 @@ const projectsData = [
     liveDemo: "https://neth-sawan.vercel.app/"
   },
   {
+    id: "bonchi-food",
+    name: "Bonchi - Food Ordering App",
+    shortDesc: "Sri Lankan culinary ordering & delivery mobile app",
+    fullDesc: "A high-performance, visually stunning mobile food ordering application built with Flutter and Dart, tailored specifically for authentic Sri Lankan culinary favorites (Kottu, Rice & Curry, Short Eats, and Biryani).",
+    tech: ["Flutter", "Dart", "Supabase", "Mobile App", "UI/UX"],
+    features: [
+      "Interactive food menu with dynamic categorization and dish customization",
+      "Real-time cart calculation, order customization, and checkout summary",
+      "Live order status tracking and delivery status pipeline",
+      "Modern mobile UI with micro-interactions and smooth Flutter animations",
+      "Supabase backend integration for user auth and data management"
+    ],
+    repo: "https://github.com/deshan2004/food-ordering-system",
+    liveDemo: "#"
+  },
+  {
     id: "sky-drifter",
     name: "Sky Drifter",
     shortDesc: "Celestial platformer game with Phaser 3",
@@ -29,6 +71,84 @@ const projectsData = [
     features: ["Dynamic level progression with increasing difficulty", "Interactive glassmorphism HUD with neon aesthetics", "High-score persistence via LocalStorage", "Smooth arcade physics and animations"],
     repo: "https://github.com/deshan2004/sky-drifter",
     liveDemo: "https://deshan2004.github.io/Sky-Drifter/"
+  },
+  {
+    id: "codecraft-solutions",
+    name: "CodeCraft Solutions",
+    shortDesc: "Modern software agency showcase & service portal",
+    fullDesc: "A sleek, responsive digital agency showcase portal built with React 19, TypeScript, and Vite. Designed to highlight high-end digital agency services, technical consulting, product engineering, and interactive portfolio case studies.",
+    tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Lucide Icons"],
+    features: [
+      "Modern agency landing page with sleek dark aesthetic",
+      "Interactive tech services showcase (Web, Mobile, AI Solutions)",
+      "Client inquiry form with responsive validation",
+      "Ultra-fast bundle size and optimized performance with Vite"
+    ],
+    repo: "https://github.com/deshan2004/CodeCraft-Solutions",
+    liveDemo: "https://code-craft-solutions-six.vercel.app"
+  },
+  {
+    id: "urbaneats",
+    name: "UrbanEats Cloud Kitchen",
+    shortDesc: "Multi-brand cloud kitchen management platform",
+    fullDesc: "A modular, database-driven cloud kitchen web platform handling end-to-end multi-brand kitchen operations—from public customer ordering and real-time live status tracking to kitchen fulfillment queues, inventory depletion, and managerial business intelligence.",
+    tech: ["PHP 8.x", "MySQL (PDO)", "JavaScript", "HTML5", "CSS3"],
+    features: [
+      "End-to-end customer menu ordering and order status tracking",
+      "Kitchen fulfillment queue management for line chefs",
+      "Real-time inventory tracking and automatic ingredient depletion",
+      "Role-based access control (Admin, Kitchen Staff, Customer)",
+      "Robust data integrity implemented with prepared statements and PDO"
+    ],
+    repo: "https://github.com/deshan2004/UrbanEats-Cloud-Kitchen-Platform",
+    liveDemo: "#"
+  },
+  {
+    id: "health-wellness",
+    name: "Health & Wellness App",
+    shortDesc: "Native Android health & biometric tracking app",
+    fullDesc: "A modern native Android application built with Kotlin, Java, and Material Design 3. Empowers users to track personal biometric indicators, calculate real-time BMI, explore curated health tips, and adopt structured nutritional and wellness guidelines.",
+    tech: ["Kotlin", "Java", "Android Studio", "Material Design 3", "Jetpack Navigation"],
+    features: [
+      "Real-time interactive BMI calculator with dynamic category indicator",
+      "Curated health advice and daily tips via dynamic RecyclerView",
+      "Single-Activity Architecture with Jetpack Navigation and ViewBinding",
+      "Structured nutritional recommendations and lifestyle guidelines",
+      "Fluid animations and Material 3 design system components"
+    ],
+    repo: "https://github.com/deshan2004/Health-Wellness-App",
+    liveDemo: "#"
+  },
+  {
+    id: "aquasoothe",
+    name: "AquaSoothe",
+    shortDesc: "Smart hydration tracking & wellness reminder app",
+    fullDesc: "A cross-platform mobile application designed to promote healthy daily hydration habits. Built using Flutter and Riverpod state management, featuring customizable hydration goals, smart scheduled reminders, and daily water intake statistics.",
+    tech: ["Flutter", "Dart", "Riverpod", "Firebase", "Local Notifications"],
+    features: [
+      "Smart water intake tracking with quick-log presets",
+      "Scheduled reminders and customizable notification intervals",
+      "Daily and weekly hydration progress analytics and visual charts",
+      "Robust state management using Riverpod architecture",
+      "Local persistence and cloud backup synchronization"
+    ],
+    repo: "https://github.com/deshan2004/Aquasoothe",
+    liveDemo: "#"
+  },
+  {
+    id: "riga-dance-academy",
+    name: "RIGA Dance Academy",
+    shortDesc: "Performing arts academy showcase & booking portal",
+    fullDesc: "A dynamic, high-engagement web platform for a professional performing arts academy built with Next.js, React, and Framer Motion. Highlights troupe showcases, class schedules, instructor profiles, and student inquiry registration.",
+    tech: ["Next.js", "React.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Firebase"],
+    features: [
+      "Dynamic dance troupe showcase with video and media gallery previews",
+      "Interactive class schedule browser categorized by skill level",
+      "Integrated student inquiry and registration system with email alerts",
+      "Fluid scroll animations and micro-interactions powered by Framer Motion"
+    ],
+    repo: "https://github.com/deshan2004/RIGA-Dance-Academy",
+    liveDemo: "https://groove-academy-wine.vercel.app"
   },
   {
     id: "cinemate",
@@ -45,7 +165,7 @@ const projectsData = [
     name: "TailWatch",
     shortDesc: "Community stray dog care & rabies prevention",
     fullDesc: "A community-driven platform for stray dog care and rabies prevention. Enables stray dog registry, vaccination alerts, and community reporting to promote animal welfare and public health.",
-    tech: ["HTML5", "CSS3", "JavaScript", "Firebase", "map", "PHP"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Firebase", "Leaflet", "PHP"],
     features: ["Stray dog registry with geolocation", "Vaccination reminder system", "Community rescue and incident reports", "Real-time data synchronization"],
     repo: "https://github.com/deshan2004/TailWatch",
     liveDemo: "https://deshan2004.github.io/TailWatch/"
@@ -61,14 +181,29 @@ const projectsData = [
     liveDemo: "https://edu-connect-rust-eta.vercel.app/"
   },
   {
-    id: "codepulse",
-    name: "CodePulse",
-    shortDesc: "Automated SQA Dashboard with SonarQube",
-    fullDesc: "Automated Software Quality Assurance (SQA) Dashboard built with FastAPI, Next.js, and SonarQube. Automates code scanning, tracks quality/security metrics, and monitors performance endpoints in real-time.",
-    tech: ["FastAPI", "Next.js", "Python", "SonarQube", "TypeScript", "PostgreSQL"],
-    features: ["Real-time code scanning and security metrics", "Automated tracking of SQA standards", "Performance endpoint monitoring", "Interactive dashboard UI"],
-    repo: "https://github.com/deshan2004/CodePulse",
-    liveDemo: "https://code-pulse-jzq7.vercel.app/"
+    id: "kingswood-connect",
+    name: "Kingswood Connect",
+    shortDesc: "Community platform for Kingswood",
+    fullDesc: "A dedicated community and networking platform built for Kingswood. Features a modern, responsive user interface and seamless integration for users to connect and interact.",
+    tech: ["JavaScript", "React.js", "Vercel", "Firebase"],
+    features: ["Responsive community networking interface", "Real-time updates", "Optimized performance and SEO", "Modern UI/UX design"],
+    repo: "https://github.com/deshan2004/Kingswood-Connect",
+    liveDemo: "https://kingswood-connect.vercel.app"
+  },
+  {
+    id: "employee-project-management",
+    name: "Employee & Project Management",
+    shortDesc: "Corporate workforce tracking & project milestone system",
+    fullDesc: "A comprehensive web-based project and employee workflow management platform designed to track team tasks, monitor project milestones, delegate responsibilities, and analyze workforce productivity in real time.",
+    tech: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "Vercel"],
+    features: [
+      "Task assignment, milestone progress, and deadline monitoring dashboard",
+      "Employee directory with attendance and task completion metrics",
+      "Role-based administrative controls for project managers and team members",
+      "Comprehensive project status reporting and productivity statistics"
+    ],
+    repo: "https://github.com/deshan2004/employee-project-managment-system",
+    liveDemo: "https://employee-project-managment-system.vercel.app"
   },
   {
     id: "ecommerce-testing",
@@ -78,16 +213,6 @@ const projectsData = [
     tech: ["Java", "Selenium", "Maven", "SQA"],
     features: ["Automated product search verification", "Integration with Maven build lifecycle", "Detailed test reporting", "Robust UI interaction handling"],
     repo: "https://github.com/deshan2004/E-commerce-Website-Search-Automation",
-    liveDemo: "#"
-  },
-  {
-    id: "chatbot-learnbot",
-    name: "LearnBot",
-    shortDesc: "Interactive programming learning platform",
-    fullDesc: "LearnBot is a desktop-based interactive learning platform designed to help beginners master programming concepts. Built with Python and Tkinter, providing real-world analogies and assessments.",
-    tech: ["Python", "Tkinter", "Desktop App"],
-    features: ["Structured learning paths for coding", "Built-in assessment system", "Real-world programming analogies", "Interactive desktop UI"],
-    repo: "https://github.com/deshan2004/ChatBot",
     liveDemo: "#"
   },
   {
@@ -101,14 +226,44 @@ const projectsData = [
     liveDemo: "#"
   },
   {
-    id: "kingswood-connect",
-    name: "Kingswood Connect",
-    shortDesc: "Community platform for Kingswood",
-    fullDesc: "A dedicated community and networking platform built for Kingswood. Features a modern, responsive user interface and seamless integration for users to connect and interact.",
-    tech: ["JavaScript", "React.js", "Vercel", "FireBase"],
-    features: ["Responsive community networking interface", "Real-time updates", "Optimized performance and SEO", "Modern UI/UX design"],
-    repo: "https://github.com/deshan2004/Kingswood-Connect",
-    liveDemo: "https://kingswood-connect.vercel.app"
+    id: "airline-ticketing",
+    name: "Airline Ticketing Centre",
+    shortDesc: "Java OOP airline reservation & automated queue system",
+    fullDesc: "A comprehensive Java management system demonstrating procedural array architectures evolving into advanced Object-Oriented design. Features a custom FIFO waiting list queue, algorithmic sorting, and file I/O persistence.",
+    tech: ["Java", "OOP", "Data Structures", "Algorithms", "File I/O"],
+    features: [
+      "Interactive console management interface with robust command menus",
+      "Automated waiting list queue utilizing custom queue data structures",
+      "Custom Bubble Sort implementation for passenger alphabetical sorting",
+      "File I/O persistence for saving and loading passenger records (.txt)"
+    ],
+    repo: "https://github.com/deshan2004/Airline-Ticketing-Centre-Program-",
+    liveDemo: "#"
+  },
+  {
+    id: "critical-section-solver",
+    name: "Peterson's Algorithm Simulator",
+    shortDesc: "Multithreading synchronization & concurrency solver",
+    fullDesc: "A Java implementation simulating concurrent multithreading race conditions and resolving the Critical Section Problem using Peterson's Algorithm. Developed for academic demonstration of mutual exclusion, progress, and bounded waiting.",
+    tech: ["Java", "Multithreading", "Concurrency", "Operating Systems"],
+    features: [
+      "Demonstration of race conditions and shared memory vulnerability",
+      "Peterson's Algorithm implementation ensuring safe mutual exclusion",
+      "Thread lifecycle monitoring and real-time execution logging",
+      "Validation of OS process synchronization and bounded waiting theorems"
+    ],
+    repo: "https://github.com/deshan2004/Critical-Section-Problem-Solver---Peterson-s-Algorithm",
+    liveDemo: "#"
+  },
+  {
+    id: "chatbot-learnbot",
+    name: "LearnBot",
+    shortDesc: "Interactive programming learning platform",
+    fullDesc: "LearnBot is a desktop-based interactive learning platform designed to help beginners master programming concepts. Built with Python and Tkinter, providing real-world analogies and assessments.",
+    tech: ["Python", "Tkinter", "Desktop App"],
+    features: ["Structured learning paths for coding", "Built-in assessment system", "Real-world programming analogies", "Interactive desktop UI"],
+    repo: "https://github.com/deshan2004/ChatBot",
+    liveDemo: "#"
   },
   {
     id: "ultimate-guessing-game",
@@ -119,6 +274,21 @@ const projectsData = [
     features: ["Menu-driven multi-game architecture", "Number and word guessing mechanics", "Code breaker logic", "Interactive web GUI with Streamlit"],
     repo: "https://github.com/deshan2004/Ultimate-Guessing-Game-Python",
     liveDemo: "https://ultimate-guessing-game-python-ufca4jfzddoh3ovzjwg9dm.streamlit.app/"
+  },
+  {
+    id: "social-media-analysis",
+    name: "Student Social Media Analysis",
+    shortDesc: "Empirical statistical study on student behavior & GPA",
+    fullDesc: "A data analytics and empirical statistical research project evaluating the correlation between social media addiction, academic performance, and mental health among university students using IBM SPSS and quantitative methods.",
+    tech: ["IBM SPSS", "Statistical Analysis", "Data Cleaning", "Quantitative Research"],
+    features: [
+      "Comprehensive dataset cleaning, normalization, and outlier analysis",
+      "Hypothesis testing and correlation analysis (Screen time vs. GPA)",
+      "Behavioral addiction metric modeling and demographic breakdown",
+      "Detailed statistical reporting with descriptive visualizations"
+    ],
+    repo: "https://github.com/deshan2004/student-social-media-analysis",
+    liveDemo: "#"
   }
 ];
 
