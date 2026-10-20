@@ -12,7 +12,7 @@ const projectsData = [
   },
   {
     id: "kethpiyasa",
-    name: "KethPiyasa (කෙත්පියස)",
+    name: "KethPiyasa",
     shortDesc: "Direct Farmer-to-Buyer B2B Agricultural Marketplace",
     fullDesc: "A full-stack B2B agricultural digital marketplace platform engineered to streamline Sri Lanka's agricultural supply chain. Bridges smallholder farmers directly with commercial buyers, eliminating intermediary exploitation, facilitating forward contracts, and providing escrow-secured settlements.",
     tech: ["TypeScript", "React.js", "Next.js", "Tailwind CSS", "Vercel"],
@@ -307,8 +307,8 @@ function showToast(message, type = 'success') {
 // Download PDF CV Directly
 function downloadPDFCV() {
   const link = document.createElement('a');
-  link.href = 'CV.pdf'; // ඔයාගේ ඇත්තම CV.pdf එක තියෙන තැන
-  link.download = 'deshan siriwardhana cv.pdf'; // ඩවුන්ලෝඩ් වෙද්දී සේව් වෙන නම
+  link.href = 'CV.pdf';
+  link.download = 'deshan siriwardhana cv.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
