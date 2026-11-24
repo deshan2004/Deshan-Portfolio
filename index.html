@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
   <!-- Botpress chatbot core scripts -->
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/05/15/05/20260515053635-BXXX2PUA.js" defer></script>
@@ -43,10 +43,23 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#startup">Startup</a></li>
       <li><a href="#tech-stack">Tech Stack</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="mobile-only-startup">
+        <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="mobile-nav-startup-btn">
+          <i class="fas fa-rocket"></i> Visit CodeCraft Site <i class="fas fa-external-link-alt"></i>
+        </a>
+      </li>
     </ul>
+    <div class="nav-cta">
+      <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-startup-btn" title="Visit CodeCraft Solutions Official Site">
+        <span class="startup-pulse-dot"></span>
+        <span class="btn-text">CodeCraft Site</span>
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -54,18 +67,26 @@
   <section id="home" class="hero">
     <div class="container hero-content">
       <div class="hero-left">
-        <div class="badge-glow">✨ Available for Work</div>
+        <div class="hero-top-badges">
+          <div class="badge-glow">✨ Available for Work</div>
+          <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="startup-hero-banner" title="Visit CodeCraft Solutions Official Site">
+            <span class="startup-badge-pill"><i class="fas fa-rocket"></i> Startup</span>
+            <span class="startup-banner-text">Founder @ <strong>CodeCraft Solutions</strong></span>
+            <i class="fas fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
         <h1>Hi, I'm <span>Deshan Siriwardhana</span></h1>
-        <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | SQA & Clean Code Advocate</p>
+        <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | Founder @ CodeCraft Solutions</p>
         <div class="hero-btns">
-          <a href="#projects" class="btn"><i class="fas fa-code"></i> Projects</a>
+          <a href="#startup" class="btn"><i class="fas fa-rocket"></i> My Startup</a>
+          <a href="#projects" class="btn btn-outline"><i class="fas fa-code"></i> Projects</a>
           <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-         <a href="CV.pdf" download="deshan siriwardhana cv.pdf" id="downloadCvBtn" class="btn btn-primary-glow">
-           <i class="fas fa-file-download"></i> Download CV
+          <a href="CV.pdf" download="deshan siriwardhana cv.pdf" id="downloadCvBtn" class="btn btn-primary-glow">
+            <i class="fas fa-file-download"></i> Download CV
           </a>
         </div>
         <div class="stat-note">
-          <i class="fas fa-map-marker-alt"></i> Sri Lanka 🇱🇰 · Open for job opportunity
+          <i class="fas fa-map-marker-alt"></i> Sri Lanka 🇱🇰 · Open for job opportunities & startup collaborations
         </div>
       </div>
       <div class="hero-right">
@@ -83,17 +104,130 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-text">
-        <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps, integrating real-time AI, and ensuring top-tier software quality. I thrive on turning complex ideas into elegant digital experiences. Currently focused on <strong>web architecture, AI accessibility, and automated testing</strong>.</p>
+        <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps, integrating real-time AI, and ensuring top-tier software quality. I thrive on turning complex ideas into elegant digital experiences. Founder of <strong>CodeCraft Solutions</strong> and currently focused on <strong>web architecture, AI accessibility, and automated testing</strong>.</p>
         <div class="about-stats">
-          <div class="stat-item"><i class="fas fa-code"></i> 20+ Projects</div>
+          <div class="stat-item"><i class="fas fa-rocket"></i> Startup Founder</div>
+          <div class="stat-item"><i class="fas fa-code"></i> 25+ Projects</div>
           <div class="stat-item"><i class="fas fa-users"></i> Team Collaborations</div>
           <div class="stat-item"><i class="fas fa-trophy"></i> Hackathons</div>
         </div>
       </div>
       <div class="skills">
-        <span>Full-Stack Dev</span><span>Mobile App Dev</span><span>Software QA</span><span>AI Integration</span>
+        <span>Full-Stack Dev</span><span>Startup Leadership</span><span>Mobile App Dev</span><span>Software QA</span><span>AI Integration</span>
         <span>REST APIs</span><span>Agile Methodologies</span><span>Manual & Automated Testing</span>
         <span>Performance Optimization</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CodeCraft Startup Showcase Section -->
+  <section id="startup" class="startup-section reveal">
+    <div class="container">
+      <div class="startup-header-pill">
+        <span class="startup-pulse-dot"></span>
+        <span>FOUNDER & DIGITAL AGENCY</span>
+      </div>
+      <h2 class="section-title">My Startup · CodeCraft Solutions</h2>
+      <p class="section-subtitle">Engineering high-impact web architectures, mobile experiences, and AI solutions.</p>
+
+      <div class="startup-card-wrapper">
+        <div class="startup-info-column">
+          <div class="startup-brand">
+            <div class="startup-logo-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div>
+              <h3>CodeCraft Solutions</h3>
+              <span class="startup-role-tag"><i class="fas fa-user-astronaut"></i> Founded & Led by Deshan Siriwardhana</span>
+            </div>
+          </div>
+          
+          <p class="startup-bio">
+            <strong>CodeCraft Solutions</strong> is a modern software engineering and digital innovation firm. We transform ambitious concepts into performant, production-ready digital products with enterprise-grade quality, modern cloud architecture, and intuitive user experiences.
+          </p>
+
+          <div class="startup-services-grid">
+            <div class="startup-service-item">
+              <div class="service-icon"><i class="fas fa-globe"></i></div>
+              <div>
+                <h4>Custom Web & SaaS</h4>
+                <p>High-speed, scalable web applications built with React 19, Next.js, and TypeScript.</p>
+              </div>
+            </div>
+            <div class="startup-service-item">
+              <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+              <div>
+                <h4>Mobile Engineering</h4>
+                <p>Cross-platform mobile apps using Flutter & Android Kotlin with fluid micro-interactions.</p>
+              </div>
+            </div>
+            <div class="startup-service-item">
+              <div class="service-icon"><i class="fas fa-brain"></i></div>
+              <div>
+                <h4>AI & Automation</h4>
+                <p>Intelligent OCR systems, computer vision, and real-time machine learning pipelines.</p>
+              </div>
+            </div>
+            <div class="startup-service-item">
+              <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+              <div>
+                <h4>SQA & Auditing</h4>
+                <p>Automated regression testing, SonarQube code scanning, and performance benchmarking.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="startup-actions">
+            <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary-glow startup-main-btn">
+              <i class="fas fa-external-link-alt"></i> Visit CodeCraft Website
+            </a>
+            <a href="https://github.com/deshan2004/CodeCraft-Solutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <i class="fab fa-github"></i> Agency Repo
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fas fa-paper-plane"></i> Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <div class="startup-preview-column">
+          <div class="mockup-window">
+            <div class="mockup-window-header">
+              <div class="mockup-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mockup-address-bar">
+                <i class="fas fa-lock"></i>
+                <span>code-craft-solutions-six.vercel.app</span>
+              </div>
+              <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="mockup-external-icon" title="Open CodeCraft site in new tab">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <div class="mockup-window-body">
+              <div class="mockup-inner-hero">
+                <div class="mockup-agency-badge">
+                  <span class="status-indicator-live"></span> AGENCY PORTAL ACTIVE
+                </div>
+                <h4>CodeCraft Solutions</h4>
+                <p>Architecting Next-Gen Digital Products · Full-Stack · Mobile · AI Solutions</p>
+                <div class="mockup-tags">
+                  <span>React 19</span>
+                  <span>TypeScript</span>
+                  <span>Vite</span>
+                  <span>Tailwind CSS</span>
+                </div>
+                <div class="mockup-cta-box">
+                  <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="btn mockup-launch-btn">
+                    <i class="fas fa-rocket"></i> Launch Live Website <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -303,13 +437,13 @@
 
 <footer>
   
-  <p>© 2026 Deshan Siriwardhana — .NET & Full-Stack Dev | AI Enthusiast | SQA Focused</p>
+  <p>© 2026 Deshan Siriwardhana — Founder @ CodeCraft Solutions · Full-Stack Dev | AI & SQA Focused</p>
 
 </footer>
 
 <div id="toast" class="toast"></div>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 
 </body>
 </html>

@@ -1,8 +1,42 @@
 // Projects Data
 const projectsData = [
   {
+    id: "codecraft-solutions",
+    name: "CodeCraft Solutions",
+    badge: "🚀 My Startup",
+    shortDesc: "Modern software agency showcase & service portal",
+    fullDesc: "A sleek, responsive digital agency showcase portal built with React 19, TypeScript, and Vite. Official platform for CodeCraft Solutions—showcasing premium digital engineering services, technical consulting, scalable cloud applications, and custom software development.",
+    tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Lucide Icons"],
+    features: [
+      "Modern agency landing portal with sleek dark aesthetic & fluid interactions",
+      "Interactive tech services showcase (Web Architecture, Mobile Apps, AI Solutions, SQA)",
+      "Client inquiry form with responsive validation & consultation booking",
+      "Ultra-fast bundle size and optimized performance with Vite"
+    ],
+    repo: "https://github.com/deshan2004/CodeCraft-Solutions",
+    liveDemo: "https://code-craft-solutions-six.vercel.app"
+  },
+  {
+    id: "novera-voting-system",
+    name: "NOVERA ’26 — Runway Voting System",
+    badge: "🔥 Live Project",
+    shortDesc: "Real-time fashion runway & pageant live audience voting platform",
+    fullDesc: "An elegant, real-time voting platform built with Next.js (TypeScript), Spring Boot (Java 21), and Firebase Firestore for AIESEC in CINEC Modeling & Personality Development Workshop. Features stage QR presentation display (/qr), live attendee mobile voting ballot (/vote), instant real-time results tally, and admin controls.",
+    tech: ["Next.js", "TypeScript", "Spring Boot", "Java 21", "Firebase Firestore", "Tailwind CSS"],
+    features: [
+      "Stage QR Code presentation display (/qr) formatted for stage projectors and kiosks",
+      "Real-time mobile voting ballot (/vote) with instant Firestore synchronization",
+      "Spring Boot Java 21 backend for secure vote validation and data integrity",
+      "Instant leaderboard tally with real-time contestant rankings",
+      "Admin controls to open/close voting rounds and monitor metrics"
+    ],
+    repo: "https://github.com/deshan2004/novera-voting-system",
+    liveDemo: "https://novera-voting-system.vercel.app"
+  },
+  {
     id: "shelflife-ai",
     name: "ShelfLife-AI",
+    badge: "✨ AI Innovation",
     shortDesc: "AI-powered retail inventory & expiry loss prevention",
     fullDesc: "An innovative AI-powered inventory management system that uses OCR technology and predictive analytics to eliminate expiry losses, digitize traditional stock tracking, and maximize profits for small-scale retailers.",
     tech: ["React.js", "Tesseract.js", "ZXing Library", "Node.js", "Firebase", "OCR"],
@@ -63,6 +97,22 @@ const projectsData = [
     liveDemo: "#"
   },
   {
+    id: "road-to-xtreme",
+    name: "Road To Xtreme 2.0",
+    badge: "🌟 3D Web",
+    shortDesc: "Interactive 3D web experience for IEEE Road To Xtreme",
+    fullDesc: "An immersive 3D web portal designed and developed for the IEEE Road To Xtreme 2.0 competition and awareness program. Features interactive 3D visuals, dynamic canvas animations, event schedules, and smooth navigation.",
+    tech: ["JavaScript", "HTML5 Canvas", "CSS3", "WebGL / 3D Web", "UI/UX"],
+    features: [
+      "Interactive 3D visuals with high-performance canvas rendering",
+      "Event timeline, rules, and participant registration information",
+      "Cyber-themed futuristic aesthetic tailored for IEEE competitive programming",
+      "Smooth hardware-accelerated animations across desktop and mobile"
+    ],
+    repo: "https://github.com/deshan2004/Road_To_Xtreme-2.0",
+    liveDemo: "#"
+  },
+  {
     id: "sky-drifter",
     name: "Sky Drifter",
     shortDesc: "Celestial platformer game with Phaser 3",
@@ -73,19 +123,34 @@ const projectsData = [
     liveDemo: "https://deshan2004.github.io/Sky-Drifter/"
   },
   {
-    id: "codecraft-solutions",
-    name: "CodeCraft Solutions",
-    shortDesc: "Modern software agency showcase & service portal",
-    fullDesc: "A sleek, responsive digital agency showcase portal built with React 19, TypeScript, and Vite. Designed to highlight high-end digital agency services, technical consulting, product engineering, and interactive portfolio case studies.",
-    tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Lucide Icons"],
+    id: "intern-leave-management",
+    name: "Intern Leave Management System",
+    shortDesc: "Corporate intern leave tracking & approval workflow platform",
+    fullDesc: "A full-stack workflow management platform engineered to automate leave requests, supervisor approvals, balance auditing, and status notifications for corporate interns and human resource supervisors.",
+    tech: ["JavaScript", "Node.js", "Express.js", "HTML5", "CSS3", "MySQL / MongoDB"],
     features: [
-      "Modern agency landing page with sleek dark aesthetic",
-      "Interactive tech services showcase (Web, Mobile, AI Solutions)",
-      "Client inquiry form with responsive validation",
-      "Ultra-fast bundle size and optimized performance with Vite"
+      "Leave application submission with date pickers, reason logging, and status tracking",
+      "Supervisor dashboard with one-click approve/reject actions and feedback notes",
+      "Automated real-time leave quota deductions and balance calculation",
+      "Role-based access control and user audit log tracking"
     ],
-    repo: "https://github.com/deshan2004/CodeCraft-Solutions",
-    liveDemo: "https://code-craft-solutions-six.vercel.app"
+    repo: "https://github.com/deshan2004/intern-leave-management-assignment",
+    liveDemo: "#"
+  },
+  {
+    id: "ecommerce-web-platform",
+    name: "Modern E-Commerce Platform",
+    shortDesc: "Responsive online store with dynamic catalog & cart",
+    fullDesc: "A responsive online shopping web application featuring dynamic catalog filtering, fast product search, persistent shopping cart management, and seamless multi-step checkout workflow.",
+    tech: ["JavaScript", "HTML5", "CSS3", "REST APIs", "Local Storage"],
+    features: [
+      "Dynamic catalog filtering by category, price range, and customer ratings",
+      "Persistent cart state with quantity controls and real-time total updates",
+      "Responsive mobile-first layout with smooth hover effects and micro-interactions",
+      "Structured modular JavaScript architecture for easy API integration"
+    ],
+    repo: "https://github.com/deshan2004/E-commerce-web",
+    liveDemo: "#"
   },
   {
     id: "urbaneats",
@@ -327,20 +392,31 @@ function renderProjects() {
 
   projectsToShow.forEach(proj => {
     const card = document.createElement('div');
-    card.className = 'project-card';
+    const isStartup = proj.id === 'codecraft-solutions';
+    card.className = 'project-card' + (isStartup ? ' startup-project-card' : '');
 
-    const techChips = proj.tech.slice(0, 2).map(t =>
-      `<span style="background:#1e2a3a; padding:2px 10px; border-radius:20px; font-size:0.7rem; margin-right:6px; display:inline-block;">${t}</span>`
+    const badgeHtml = proj.badge ? 
+      `<div class="project-card-badge ${isStartup ? 'badge-startup' : ''}">${proj.badge}</div>` : '';
+
+    const techChips = proj.tech.slice(0, 3).map(t =>
+      `<span class="project-tech-chip">${t}</span>`
     ).join('');
 
+    const liveBtn = (proj.liveDemo && proj.liveDemo !== '#') ? `
+      <a href="${proj.liveDemo}" target="_blank" class="live-demo-link" title="Visit Live Site">
+        <i class="fas fa-external-link-alt"></i> Live
+      </a>` : '';
+
     card.innerHTML = `
-      <div style="margin-bottom: 8px;">${techChips}</div>
+      ${badgeHtml}
+      <div class="project-chips-wrapper">${techChips}</div>
       <h3>${proj.name}</h3>
       <p>${proj.shortDesc}</p>
       <div class="project-links">
         <a href="#" onclick="window.showProjectDetail('${proj.id}'); return false;">
           <i class="fas fa-expand-alt"></i> Explore
         </a>
+        ${liveBtn}
         <a href="${proj.repo}" target="_blank">
           <i class="fab fa-github"></i> Code
         </a>
@@ -527,8 +603,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Navigation Link Smooth Scroll
   navItems.forEach(link => {
     link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return; // Allow normal opening for external links
       e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
+      const targetId = href.substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
