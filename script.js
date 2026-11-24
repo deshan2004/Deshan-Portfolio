@@ -85,13 +85,13 @@ const projectsData = [
     name: "Road To Xtreme 2.0",
     badge: "🌟 3D Web",
     shortDesc: "Interactive 3D web experience for IEEE Road To Xtreme",
-    fullDesc: "An immersive 3D web portal designed and developed for the IEEE Road To Xtreme 2.0 competition and awareness program. Features interactive 3D visuals, dynamic canvas animations, event schedules, and smooth navigation.",
-    tech: ["JavaScript", "HTML5 Canvas", "CSS3", "WebGL / 3D Web", "UI/UX"],
+    fullDesc: "An immersive 3D web portal designed and developed for the IEEE Road To Xtreme 2.0 competition and awareness program. Features interactive animations, GSAP timeline controls, Framer Motion transitions, and Firebase Hosting.",
+    tech: ["Next.js", "TypeScript", "GSAP", "React.js", "Tailwind CSS", "Firebase", "Framer Motion"],
     features: [
-      "Interactive 3D visuals with high-performance canvas rendering",
-      "Event timeline, rules, and participant registration information",
-      "Cyber-themed futuristic aesthetic tailored for IEEE competitive programming",
-      "Smooth hardware-accelerated animations across desktop and mobile"
+      "Built with Next.js 14, React 18, TypeScript, and Tailwind CSS",
+      "Interactive timeline animations powered by GSAP, Anime.js, and Framer Motion",
+      "Competition schedules, rules, timeline guidelines, and registration workflow",
+      "Deployed and hosted on Google Firebase Hosting"
     ],
     repo: "https://github.com/deshan2004/Road_To_Xtreme-2.0",
     liveDemo: "https://road-to-xtreme-2-0.web.app/"
@@ -108,30 +108,32 @@ const projectsData = [
   },
   {
     id: "intern-leave-management",
-    name: "Intern Leave Management System",
-    shortDesc: "Corporate intern leave tracking & approval workflow platform",
-    fullDesc: "A full-stack workflow management platform engineered to automate leave requests, supervisor approvals, balance auditing, and status notifications for corporate interns and human resource supervisors.",
-    tech: ["JavaScript", "Node.js", "Express.js", "HTML5", "CSS3", "MySQL / MongoDB"],
+    name: "Employee Leave Management System",
+    shortDesc: "Full-stack enterprise leave workflow & admin platform for Omibits",
+    fullDesc: "An enterprise-grade full-stack leave management platform engineered with a clean Layered Architecture for Omibits (Pvt) Ltd. Features Spring Boot 3.3.5 REST APIs, reactive React 18 Glassmorphism UI with Vite & Tailwind, PostgreSQL 16 database, Docker support, and automated JUnit 5 test suites.",
+    tech: ["Spring Boot", "React.js", "Java 21", "PostgreSQL", "Tailwind CSS", "Docker", "JUnit 5"],
     features: [
-      "Leave application submission with date pickers, reason logging, and status tracking",
-      "Supervisor dashboard with one-click approve/reject actions and feedback notes",
-      "Automated real-time leave quota deductions and balance calculation",
-      "Role-based access control and user audit log tracking"
+      "Layered Architecture with Spring Boot 3.3.5 (@RestController, Services, JPA Repositories)",
+      "Single Page Application built with React 18, Vite, Tailwind CSS, and Lucide Icons",
+      "Enterprise Relational DB using PostgreSQL 16 with foreign key cascading & check constraints",
+      "Leave application workflow with date duration calculation & medical certificate attachments",
+      "Admin dashboard with quick approvals, rejection notes, and employee directory management",
+      "BCrypt password hashing and 100% passing JUnit 5 & Mockito test coverage"
     ],
     repo: "https://github.com/deshan2004/intern-leave-management-assignment",
     liveDemo: "#"
   },
   {
     id: "ecommerce-web-platform",
-    name: "Modern E-Commerce Platform",
-    shortDesc: "Responsive online store with dynamic catalog & cart",
-    fullDesc: "A responsive online shopping web application featuring dynamic catalog filtering, fast product search, persistent shopping cart management, and seamless multi-step checkout workflow.",
-    tech: ["JavaScript", "HTML5", "CSS3", "REST APIs", "Local Storage"],
+    name: "ShopWave — E-Commerce Web",
+    shortDesc: "Responsive digital shopping platform with dynamic cart & Firebase",
+    fullDesc: "A responsive online shopping web application featuring dynamic catalog filtering, product search, persistent shopping cart management, Firebase integration, and streamlined multi-step checkout experience.",
+    tech: ["JavaScript", "Firebase", "HTML5", "CSS3", "REST APIs"],
     features: [
       "Dynamic catalog filtering by category, price range, and customer ratings",
       "Persistent cart state with quantity controls and real-time total updates",
-      "Responsive mobile-first layout with smooth hover effects and micro-interactions",
-      "Structured modular JavaScript architecture for easy API integration"
+      "Firebase backend integration for data synchronization and storage",
+      "Responsive mobile-first layout with smooth hover effects and micro-interactions"
     ],
     repo: "https://github.com/deshan2004/E-commerce-web",
     liveDemo: "#"
