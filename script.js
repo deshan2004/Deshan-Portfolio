@@ -1,22 +1,6 @@
 // Projects Data
 const projectsData = [
   {
-    id: "codecraft-solutions",
-    name: "CodeCraft Solutions",
-    badge: "🚀 My Startup",
-    shortDesc: "Modern software agency showcase & service portal",
-    fullDesc: "A sleek, responsive digital agency showcase portal built with React 19, TypeScript, and Vite. Official platform for CodeCraft Solutions—showcasing premium digital engineering services, technical consulting, scalable cloud applications, and custom software development.",
-    tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Lucide Icons"],
-    features: [
-      "Modern agency landing portal with sleek dark aesthetic & fluid interactions",
-      "Interactive tech services showcase (Web Architecture, Mobile Apps, AI Solutions, SQA)",
-      "Client inquiry form with responsive validation & consultation booking",
-      "Ultra-fast bundle size and optimized performance with Vite"
-    ],
-    repo: "https://github.com/deshan2004/CodeCraft-Solutions",
-    liveDemo: "https://code-craft-solutions-six.vercel.app"
-  },
-  {
     id: "novera-voting-system",
     name: "NOVERA ’26 — Runway Voting System",
     badge: "🔥 Live Project",
@@ -392,11 +376,10 @@ function renderProjects() {
 
   projectsToShow.forEach(proj => {
     const card = document.createElement('div');
-    const isStartup = proj.id === 'codecraft-solutions';
-    card.className = 'project-card' + (isStartup ? ' startup-project-card' : '');
+    card.className = 'project-card';
 
     const badgeHtml = proj.badge ? 
-      `<div class="project-card-badge ${isStartup ? 'badge-startup' : ''}">${proj.badge}</div>` : '';
+      `<div class="project-card-badge">${proj.badge}</div>` : '';
 
     const techChips = proj.tech.slice(0, 3).map(t =>
       `<span class="project-tech-chip">${t}</span>`
