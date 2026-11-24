@@ -94,7 +94,7 @@ const projectsData = [
       "Smooth hardware-accelerated animations across desktop and mobile"
     ],
     repo: "https://github.com/deshan2004/Road_To_Xtreme-2.0",
-    liveDemo: "#"
+    liveDemo: "https://road-to-xtreme-2-0.web.app/"
   },
   {
     id: "sky-drifter",
