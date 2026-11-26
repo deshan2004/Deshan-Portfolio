@@ -1,230 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
-  <meta name="description" content="Deshan Siriwardhana - Full-Stack Developer, AI Enthusiast, Software QA. Mobile-optimized portfolio showcasing projects, skills, and contact.">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description"
+    content="Deshan Siriwardhana - Full-Stack Developer, AI Enthusiast, Software QA. Mobile-optimized portfolio showcasing projects, skills, and contact.">
   <title>Deshan Siriwardhana · Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
   <link rel="icon" type="image/png" href="deshan.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
   <!-- Botpress chatbot core scripts -->
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/05/15/05/20260515053635-BXXX2PUA.js" defer></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
 
-<div class="video-background">
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="video.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Fixed Chatbot Button (no broken image, uses Font Awesome icon) -->
-<div id="chat-button-container" onclick="openChatbot()">
-    <div class="chat-icon">
-          <i class="fas fa-comment-dots"></i>
-    </div>
-</div>
-
-<div class="overlay"></div>
-
-<nav>
-  <div class="nav-container">
-    <div class="logo">Deshan<span>.</span></div>
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#startup">Startup</a></li>
-      <li><a href="#tech-stack">Tech Stack</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="video.mp4" type="video/mp4">
+    </video>
   </div>
-</nav>
 
-<main>
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="hero-left">
-        <div class="badge-glow">✨ Available for Work</div>
-        <h1>Hi, I'm <span>Deshan Siriwardhana</span></h1>
-        <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | SQA & Clean Code Advocate</p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn"><i class="fas fa-code"></i> Projects</a>
-          <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-          <a href="CV.pdf" download="deshan siriwardhana cv.pdf" id="downloadCvBtn" class="btn btn-primary-glow">
-            <i class="fas fa-file-download"></i> Download CV
-          </a>
+  <!-- Fixed Chatbot Button (no broken image, uses Font Awesome icon) -->
+  <div id="chat-button-container" onclick="openChatbot()">
+    <div class="chat-icon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Deshan<span>.</span></div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#startup">Startup</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div class="hero-left">
+          <div class="badge-glow">✨ Available for Work</div>
+          <h1>Hi, I'm <span>Deshan Siriwardhana</span></h1>
+          <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | SQA & Clean Code Advocate</p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn"><i class="fas fa-code"></i> Projects</a>
+            <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i
+                class="fab fa-github"></i> GitHub</a>
+            <a href="CV.pdf" download="deshan siriwardhana cv.pdf" id="downloadCvBtn" class="btn btn-primary-glow">
+              <i class="fas fa-file-download"></i> Download CV
+            </a>
+          </div>
+          <div class="stat-note">
+            <i class="fas fa-map-marker-alt"></i> Sri Lanka 🇱🇰 · Open for job opportunity
+          </div>
         </div>
         <div class="stat-note">
           <i class="fas fa-map-marker-alt"></i> Sri Lanka 🇱🇰 · Open for job opportunity
         </div>
       </div>
       <div class="hero-right">
-        <!-- 3D Hanging Lanyard Developer Pass -->
-        <div class="lanyard-container" id="lanyardContainer">
-          <!-- Lanyard Fabric Strap from the Top -->
-          <div class="lanyard-strap">
-            <div class="strap-ribbon">
-              <span>DESHAN SIRIWARDHANA • FULL-STACK DEVELOPER •</span>
-            </div>
-            <div class="lanyard-hardware">
-              <div class="clip-swivel"></div>
-              <div class="clip-carabiner"></div>
-            </div>
+        <a href="https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
+          target="_blank" class="profile-frame" title="Connect with Deshan on WhatsApp">
+          <div class="profile-motion-wrapper">
+            <video id="heroProfileVideo" class="profile-photo profile-video" autoplay muted loop playsinline
+              poster="ds_professional_standing.png">
+              <source src="intro-walk.mp4?v=2" type="video/mp4">
+              <source src="Man_smiling_crossing_arms_e4854377_1080p.mp4" type="video/mp4">
+              <img src="ds_professional_standing.png" alt="Deshan Siriwardhana" class="profile-photo">
+            </video>
           </div>
+          <div class="profile-status">
+            <span class="status-dot"></span> Active
+          </div>
+        </a>
+      </div>
+    </section>
 
-          <!-- Interactive 3D Developer ID Badge -->
-          <div class="lanyard-card" id="lanyardCard">
-            <div class="badge-slot-hole"></div>
-            <div class="card-glare" id="cardGlare"></div>
-
-            <!-- Top Row -->
-            <div class="card-header">
-              <div class="card-chip">
-                <i class="fas fa-microchip"></i>
-                <span>DEV-PASS // 2026</span>
-              </div>
-              <div class="card-status">
-                <span class="status-indicator"></span> VERIFIED
-              </div>
-            </div>
-
-            <!-- Large Developer Title -->
-            <div class="card-title-row">
-              <span class="card-role-eyebrow">FULL STACK</span>
-              <h2 class="card-role-title">DEVELOPER</h2>
-            </div>
-
-            <!-- Media/Photo Area with Vertical Rotated Text -->
-            <div class="card-media-wrapper">
-              <div class="card-photo-box">
-                <video id="heroProfileVideo" class="card-video" autoplay muted loop playsinline poster="ds_professional_standing.png">
-                  <source src="intro-walk.mp4?v=2" type="video/mp4">
-                  <source src="Man_smiling_crossing_arms_e4854377_1080p.mp4" type="video/mp4">
-                  <img src="ds_professional_standing.png" alt="Deshan Siriwardhana" class="card-fallback-photo">
-                </video>
-                <div class="photo-scanline"></div>
-              </div>
-              <div class="card-side-tag">
-                <span>FULL STACK DEV</span>
-              </div>
-            </div>
-
-            <!-- Name & Information -->
-            <div class="card-info-box">
-              <div class="card-name-tag">DESHAN SIRIWARDHANA</div>
-              <div class="card-subtitle">Full-Stack Engineer & AI Builder</div>
-            </div>
-
-            <!-- Bottom Barcode & Footer -->
-            <div class="card-footer">
-              <div class="barcode-container">
-                <div class="barcode-graphic"></div>
-                <span class="barcode-code">DS-2026-SRI-LANKA</span>
-              </div>
-              <a href="https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20developer%20pass%20and%20would%20like%20to%20connect!" target="_blank" class="card-connect-btn" title="Connect on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </div>
+    <section id="about" class="reveal">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-text">
+          <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps,
+            integrating real-time AI, and ensuring top-tier software quality. I thrive on turning complex ideas into
+            elegant digital experiences. Currently focused on <strong>web architecture, AI accessibility, and automated
+              testing</strong>.</p>
+          <div class="about-stats">
+            <div class="stat-item"><i class="fas fa-code"></i> 25+ Projects</div>
+            <div class="stat-item"><i class="fas fa-users"></i> Team Collaborations</div>
+            <div class="stat-item"><i class="fas fa-trophy"></i> Hackathons</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="reveal">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-text">
-        <p>I'm a BSc (Hons) Software Engineering undergraduate passionate about crafting scalable web apps, integrating real-time AI, and ensuring top-tier software quality. I thrive on turning complex ideas into elegant digital experiences. Currently focused on <strong>web architecture, AI accessibility, and automated testing</strong>.</p>
-        <div class="about-stats">
-          <div class="stat-item"><i class="fas fa-code"></i> 25+ Projects</div>
-          <div class="stat-item"><i class="fas fa-users"></i> Team Collaborations</div>
-          <div class="stat-item"><i class="fas fa-trophy"></i> Hackathons</div>
+        <div class="skills">
+          <span>Full-Stack Dev</span><span>Mobile App Dev</span><span>Software QA</span><span>AI Integration</span>
+          <span>REST APIs</span><span>Agile Methodologies</span><span>Manual & Automated Testing</span>
+          <span>Performance Optimization</span>
         </div>
       </div>
-      <div class="skills">
-        <span>Full-Stack Dev</span><span>Mobile App Dev</span><span>Software QA</span><span>AI Integration</span>
-        <span>REST APIs</span><span>Agile Methodologies</span><span>Manual & Automated Testing</span>
-        <span>Performance Optimization</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Dedicated CodeCraft Startup Showcase Section (Single Exclusive Spot) -->
-  <section id="startup" class="startup-section reveal">
-    <div class="startup-glow-orb startup-orb-cyan"></div>
-    <div class="startup-glow-orb startup-orb-purple"></div>
+    <!-- Dedicated CodeCraft Startup Showcase Section (Single Exclusive Spot) -->
+    <section id="startup" class="startup-section reveal">
+      <div class="startup-glow-orb startup-orb-cyan"></div>
+      <div class="startup-glow-orb startup-orb-purple"></div>
 
-    <div class="container">
-      <div class="startup-pill-badge">
-        <span class="startup-pulse-indicator"></span>
-        <span>MY STARTUP · DIGITAL STUDIO</span>
-      </div>
-      
-      <h2 class="section-title startup-main-title">CodeCraft <span>Solutions</span></h2>
-      <p class="section-subtitle">A modern software engineering & digital product innovation studio.</p>
+      <div class="container">
+        <div class="startup-pill-badge">
+          <span class="startup-pulse-indicator"></span>
+          <span>MY STARTUP · DIGITAL STUDIO</span>
+        </div>
 
-      <div class="startup-modern-card">
-        <div class="startup-card-shine"></div>
+        <h2 class="section-title startup-main-title">CodeCraft <span>Solutions</span></h2>
+        <p class="section-subtitle">A modern software engineering & digital product innovation studio.</p>
 
-        <div class="startup-content-grid">
-          <!-- Left Column: Agency Story & Offerings -->
-          <div class="startup-details-col">
-            <div class="startup-brand-header">
-              <div class="startup-animated-icon">
-                <i class="fas fa-code"></i>
-              </div>
-              <div>
-                <h3>CodeCraft Solutions</h3>
-                <span class="startup-founder-badge"><i class="fas fa-user-astronaut"></i> Founded by Deshan Siriwardhana</span>
-              </div>
-            </div>
+        <div class="startup-modern-card">
+          <div class="startup-card-shine"></div>
 
-            <p class="startup-mission-text">
-              <strong>CodeCraft Solutions</strong> is my independent software engineering and digital innovation venture. We craft production-grade web systems, mobile applications, and intelligent AI tools built for performance, reliability, and clean architecture.
-            </p>
-
-            <div class="startup-capabilities-grid">
-              <div class="capability-card">
-                <div class="cap-icon-box"><i class="fas fa-layer-group"></i></div>
+          <div class="startup-content-grid">
+            <!-- Left Column: Agency Story & Offerings -->
+            <div class="startup-details-col">
+              <div class="startup-brand-header">
+                <div class="startup-animated-icon">
+                  <i class="fas fa-code"></i>
+                </div>
                 <div>
-                  <h4>Modern Web & SaaS</h4>
-                  <p>Scalable web applications built with React 19, Next.js, and TypeScript.</p>
+                  <h3>CodeCraft Solutions</h3>
+                  <span class="startup-founder-badge"><i class="fas fa-user-astronaut"></i> Founded by Deshan
+                    Siriwardhana</span>
                 </div>
               </div>
-              <div class="capability-card">
-                <div class="cap-icon-box"><i class="fas fa-mobile-alt"></i></div>
-                <div>
-                  <h4>Mobile Engineering</h4>
-                  <p>Cross-platform mobile applications crafted with Flutter & Android Kotlin.</p>
+
+              <p class="startup-mission-text">
+                <strong>CodeCraft Solutions</strong> is my independent software engineering and digital innovation
+                venture. We craft production-grade web systems, mobile applications, and intelligent AI tools built for
+                performance, reliability, and clean architecture.
+              </p>
+
+              <div class="startup-capabilities-grid">
+                <div class="capability-card">
+                  <div class="cap-icon-box"><i class="fas fa-layer-group"></i></div>
+                  <div>
+                    <h4>Modern Web & SaaS</h4>
+                    <p>Scalable web applications built with React 19, Next.js, and TypeScript.</p>
+                  </div>
+                </div>
+                <div class="capability-card">
+                  <div class="cap-icon-box"><i class="fas fa-mobile-alt"></i></div>
+                  <div>
+                    <h4>Mobile Engineering</h4>
+                    <p>Cross-platform mobile applications crafted with Flutter & Android Kotlin.</p>
+                  </div>
+                </div>
+                <div class="capability-card">
+                  <div class="cap-icon-box"><i class="fas fa-brain"></i></div>
+                  <div>
+                    <h4>AI & Automation</h4>
+                    <p>OCR document pipelines, computer vision, and real-time intelligent agents.</p>
+                  </div>
+                </div>
+                <div class="capability-card">
+                  <div class="cap-icon-box"><i class="fas fa-shield-alt"></i></div>
+                  <div>
+                    <h4>SQA & Clean Code</h4>
+                    <p>Automated test pipelines, SonarQube quality gates, and code audits.</p>
+                  </div>
                 </div>
               </div>
-              <div class="capability-card">
-                <div class="cap-icon-box"><i class="fas fa-brain"></i></div>
-                <div>
-                  <h4>AI & Automation</h4>
-                  <p>OCR document pipelines, computer vision, and real-time intelligent agents.</p>
-                </div>
-              </div>
-              <div class="capability-card">
-                <div class="cap-icon-box"><i class="fas fa-shield-alt"></i></div>
-                <div>
-                  <h4>SQA & Clean Code</h4>
-                  <p>Automated test pipelines, SonarQube quality gates, and code audits.</p>
-                </div>
-              </div>
-            </div>
 
             <div class="startup-btn-group">
               <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="btn startup-launch-btn">
@@ -237,274 +199,304 @@
             </div>
           </div>
 
-          <!-- Right Column: Interactive Animated Browser Showcase -->
+          <!-- Right Column: 3D Hanging Lanyard Founder Pass (Drops in when scrolling to CodeCraft) -->
           <div class="startup-visual-col">
-            <div class="live-mockup-frame">
-              <div class="mockup-chrome-bar">
-                <div class="mockup-traffic-lights">
-                  <span class="tl-dot tl-red"></span>
-                  <span class="tl-dot tl-yellow"></span>
-                  <span class="tl-dot tl-green"></span>
+            <div class="lanyard-container" id="lanyardContainer">
+              <!-- Lanyard Fabric Strap from the Top of CodeCraft -->
+              <div class="lanyard-strap">
+                <div class="strap-ribbon">
+                  <span>CODECRAFT SOLUTIONS • FOUNDER & LEAD ARCHITECT •</span>
                 </div>
-                <div class="mockup-url-pill">
-                  <i class="fas fa-lock"></i>
-                  <span>code-craft-solutions-six.vercel.app</span>
+                <div class="lanyard-hardware">
+                  <div class="clip-swivel"></div>
+                  <div class="clip-carabiner"></div>
                 </div>
-                <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="mockup-corner-link" title="Open CodeCraft site in new window">
-                  <i class="fas fa-external-link-alt"></i>
+                <a href="https://github.com/deshan2004/CodeCraft-Solutions" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">
+                  <i class="fab fa-github"></i> Repository
                 </a>
               </div>
+            </div>
 
-              <div class="mockup-viewport">
-                <div class="mockup-grid-bg"></div>
+              <!-- Interactive 3D Developer ID Badge with Image -->
+              <div class="lanyard-card" id="lanyardCard">
+                <div class="badge-slot-hole"></div>
+                <div class="card-glare" id="cardGlare"></div>
 
-                <div class="mockup-viewport-content">
-                  <div class="live-ping-badge">
-                    <span class="ping-circle"></span>
-                    <span>ONLINE & DEPLOYED ON VERCEL</span>
+                <!-- Top Row -->
+                <div class="card-header">
+                  <div class="card-chip">
+                    <i class="fas fa-microchip"></i>
+                    <span>FOUNDER ID // 2026</span>
                   </div>
-
-                  <div class="mockup-logo-symbol">
-                    <i class="fas fa-terminal"></i>
+                  <div class="card-status">
+                    <span class="status-indicator"></span> VERIFIED
                   </div>
+                </div>
+                  <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer"
+                    class="mockup-corner-link" title="Open CodeCraft site in new window">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
 
-                  <h3 class="mockup-title">CodeCraft Solutions</h3>
-                  <p class="mockup-tagline">Architecting Digital Excellence & Scalable Software</p>
+                <!-- Large Developer Title -->
+                <div class="card-title-row">
+                  <span class="card-role-eyebrow">CODECRAFT SOLUTIONS</span>
+                  <h2 class="card-role-title">FOUNDER & DEV</h2>
+                </div>
 
-                  <div class="mockup-floating-techs">
-                    <span class="floating-tech-chip ft-1"><i class="fab fa-react"></i> React 19</span>
-                    <span class="floating-tech-chip ft-2"><i class="fas fa-code"></i> TypeScript</span>
-                    <span class="floating-tech-chip ft-3"><i class="fas fa-bolt"></i> Vite</span>
-                    <span class="floating-tech-chip ft-4"><i class="fab fa-css3-alt"></i> Tailwind</span>
+                <!-- Media/Photo Area with Image & Side Tag -->
+                <div class="card-media-wrapper">
+                  <div class="card-photo-box">
+                    <img src="ds_professional_standing.png" alt="Deshan Siriwardhana" class="card-photo-img" onerror="this.src='deshan.png'">
+                    <div class="photo-scanline"></div>
                   </div>
-
-                  <div class="mockup-cta-wrapper">
-                    <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="mockup-primary-cta">
-                      <span>Launch Official Website</span>
-                      <i class="fas fa-arrow-right"></i>
-                    </a>
+                  <div class="card-side-tag">
+                    <span>FULL STACK DEV</span>
                   </div>
+                </div>
+
+                <!-- Name & Information -->
+                <div class="card-info-box">
+                  <div class="card-name-tag">DESHAN SIRIWARDHANA</div>
+                  <div class="card-subtitle">Founder & Full-Stack Architect</div>
+                </div>
+
+                <!-- Bottom Barcode & Footer -->
+                <div class="card-footer">
+                  <div class="barcode-container">
+                    <div class="barcode-graphic"></div>
+                    <span class="barcode-code">CODECRAFT-DS-2026</span>
+                  </div>
+                  <a href="https://code-craft-solutions-six.vercel.app" target="_blank" rel="noopener noreferrer" class="card-connect-btn" title="Visit CodeCraft Studio">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="tech-stack" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Tech Stack & Tools</h2>
-      <div class="tech-category-grid">
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
-            <h3>Frontend Development</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fab fa-html5"></i> HTML5</span>
-            <span class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
-            <span class="tech-chip"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
-            <span class="tech-chip"><i class="fab fa-react"></i> React.js</span>
-            <span class="tech-chip"><i class="fab fa-vuejs"></i> Vue.js</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> TypeScript</span>
-            <span class="tech-chip"><i class="fas fa-code-branch"></i> Next.js</span>
-            <span class="tech-chip"><i class="fas fa-code-branch"></i> Vite</span>
-            <span class="tech-chip"><i class="fab fa-angular"></i> Angular</span>
-            <span class="tech-chip"><i class="fab fa-tailwind"></i> Tailwind CSS</span>
-            <span class="tech-chip"><i class="fas fa-bootstrap"></i> Bootstrap</span>
-          </div>
-        </div>
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>Mobile App Development</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fas fa-mobile-alt"></i> Flutter</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> Dart</span>
-            <span class="tech-chip"><i class="fab fa-android"></i> Android (Kotlin)</span>
-            <span class="tech-chip"><i class="fas fa-layer-group"></i> Riverpod</span>
-            <span class="tech-chip"><i class="fas fa-palette"></i> Material Design 3</span>
-            <span class="tech-chip"><i class="fas fa-route"></i> Jetpack Navigation</span>
-          </div>
-        </div>
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-server"></i></div>
-            <h3>Backend Development</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> .NET Core</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> C#</span>
-            <span class="tech-chip"><i class="fas fa-code-branch"></i> Express.js</span>
-            <span class="tech-chip"><i class="fab fa-python"></i> Python</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> Django</span>
-            <span class="tech-chip"><i class="fab fa-php"></i> PHP</span>
-            <span class="tech-chip"><i class="fab fa-laravel"></i> Laravel</span>
-            <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> Spring Boot</span>
-          </div>
-        </div>
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-database"></i></div>
-            <h3>Databases</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
-            <span class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</span>
-            <span class="tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
-            <span class="tech-chip"><i class="fas fa-fire"></i> Firebase</span>
-            <span class="tech-chip"><i class="fas fa-cloud"></i> Oracle</span>
-          </div>
-        </div>
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-microchip"></i></div>
-            <h3>AI & Machine Learning</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fas fa-brain"></i> TensorFlow.js</span>
-            <span class="tech-chip"><i class="fas fa-microphone-alt"></i> Web Speech API</span>
-            <span class="tech-chip"><i class="fas fa-camera"></i> Google Generative AI</span>
-          </div>
-        </div>
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>QA & Testing Tools</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fas fa-check-double"></i> Software QA</span>
-            <span class="tech-chip"><i class="fas fa-vial"></i> SQA Testing</span>
-            <span class="tech-chip"><i class="fas fa-chart-line"></i> JMeter</span>
-            <span class="tech-chip"><i class="fas fa-flask"></i> JUnit</span>
-          </div>
-        </div>
-        <div class="tech-category-item">
-          <div class="tech-category-header">
-            <div class="category-icon"><i class="fas fa-tools"></i></div>
-            <h3>Development Tools</h3>
-          </div>
-          <div class="tech-list">
-            <span class="tech-chip"><i class="fab fa-git-alt"></i> Git</span>
-            <span class="tech-chip"><i class="fab fa-github"></i> GitHub</span>
-            <span class="tech-chip"><i class="fas fa-cloud-upload-alt"></i> Vercel</span>
-            <span class="tech-chip"><i class="fas fa-code"></i> VS Code</span>
-            <span class="tech-chip"><i class="fab fa-android"></i> Android Studio</span>
-            <span class="tech-chip"><i class="fas fa-paper-plane"></i> Postman</span>
-            <span class="tech-chip"><i class="fab fa-figma"></i> Figma</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="project-grid" id="projectGrid"></div>
-      <div id="showMoreContainer" style="text-align: center; margin-top: 3rem;">
-        <button id="showMoreBtn" class="btn primary-btn" style="padding: 0.8rem 2rem; font-size: 1rem; border-radius: 30px; display: inline-flex; align-items: center; gap: 8px;">
-          Show More Projects <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact reveal">
-    <div class="container">
-      <h2 class="section-title">Let's Connect</h2>
-      <p style="margin-bottom: 1.5rem; text-align: center; color: #b9c7da;">Have a project in mind? Let's collaborate! 👇</p>
-      
-      <div class="quick-contact-cards">
-        <div class="quick-card" onclick="window.location.href='mailto:deshandhakshitha16@gmail.com'">
-          <div class="quick-card-icon"><i class="fas fa-envelope"></i></div>
-          <div class="quick-card-info">
-            <h4>Email Me</h4>
-            <p>deshandhakshitha16@gmail.com</p>
-          </div>
-          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="quick-card" onclick="window.open('https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!', '_blank')">
-          <div class="quick-card-icon"><i class="fab fa-whatsapp"></i></div>
-          <div class="quick-card-info">
-            <h4>WhatsApp</h4>
-            <p>+94 76 977 6315</p>
-          </div>
-          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="quick-card" onclick="window.open('https://github.com/deshan2004', '_blank')">
-          <div class="quick-card-icon"><i class="fab fa-github"></i></div>
-          <div class="quick-card-info">
-            <h4>GitHub</h4>
-            <p>@deshan2004</p>
-          </div>
-          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
-        </div>
-        <div class="quick-card" onclick="window.open('https://linkedin.com/in/deshan-siriwardhana-591763277', '_blank')">
-          <div class="quick-card-icon"><i class="fab fa-linkedin"></i></div>
-          <div class="quick-card-info">
-            <h4>LinkedIn</h4>
-            <p>Connect with me</p>
-          </div>
-          <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
-        </div>
-      </div>
-
-      <div class="contact-form-wrapper">
-        <div class="form-header">
-          <i class="fas fa-paper-plane"></i>
-          <h3>Send me a message</h3>
-          <p>I'll get back to you within 24 hours</p>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label><i class="fas fa-user"></i> Your Name *</label>
-              <input type="text" id="senderName" placeholder="e.g., John Doe" required>
+    <section id="tech-stack" class="reveal">
+      <div class="container">
+        <h2 class="section-title">Tech Stack & Tools</h2>
+        <div class="tech-category-grid">
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+              <h3>Frontend Development</h3>
             </div>
-            <div class="form-group">
-              <label><i class="fas fa-envelope"></i> Email Address *</label>
-              <input type="email" id="senderEmail" placeholder="john@example.com" required>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="tech-chip"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+              <span class="tech-chip"><i class="fab fa-react"></i> React.js</span>
+              <span class="tech-chip"><i class="fab fa-vuejs"></i> Vue.js</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> TypeScript</span>
+              <span class="tech-chip"><i class="fas fa-code-branch"></i> Next.js</span>
+              <span class="tech-chip"><i class="fas fa-code-branch"></i> Vite</span>
+              <span class="tech-chip"><i class="fab fa-angular"></i> Angular</span>
+              <span class="tech-chip"><i class="fab fa-tailwind"></i> Tailwind CSS</span>
+              <span class="tech-chip"><i class="fas fa-bootstrap"></i> Bootstrap</span>
             </div>
           </div>
-          <div class="form-group">
-            <label><i class="fas fa-tag"></i> Subject *</label>
-            <input type="text" id="senderSubject" placeholder="Project Inquiry / Collaboration / Question" required>
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
+              <h3>Mobile App Development</h3>
+            </div>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fas fa-mobile-alt"></i> Flutter</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> Dart</span>
+              <span class="tech-chip"><i class="fab fa-android"></i> Android (Kotlin)</span>
+              <span class="tech-chip"><i class="fas fa-layer-group"></i> Riverpod</span>
+              <span class="tech-chip"><i class="fas fa-palette"></i> Material Design 3</span>
+              <span class="tech-chip"><i class="fas fa-route"></i> Jetpack Navigation</span>
+            </div>
           </div>
-          <div class="form-group">
-            <label><i class="fas fa-comment"></i> Message *</label>
-            <textarea id="senderMessage" rows="5" placeholder="Tell me about your project or what you'd like to discuss..." required></textarea>
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-server"></i></div>
+              <h3>Backend Development</h3>
+            </div>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> .NET Core</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> C#</span>
+              <span class="tech-chip"><i class="fas fa-code-branch"></i> Express.js</span>
+              <span class="tech-chip"><i class="fab fa-python"></i> Python</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> Django</span>
+              <span class="tech-chip"><i class="fab fa-php"></i> PHP</span>
+              <span class="tech-chip"><i class="fab fa-laravel"></i> Laravel</span>
+              <span class="tech-chip"><i class="fab fa-java"></i> Java</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> Spring Boot</span>
+            </div>
           </div>
-          <button type="submit" class="btn submit-btn" id="submitBtn">
-            <i class="fas fa-paper-plane"></i> Send Message
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-database"></i></div>
+              <h3>Databases</h3>
+            </div>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
+              <span class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</span>
+              <span class="tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
+              <span class="tech-chip"><i class="fas fa-fire"></i> Firebase</span>
+              <span class="tech-chip"><i class="fas fa-cloud"></i> Oracle</span>
+            </div>
+          </div>
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-microchip"></i></div>
+              <h3>AI & Machine Learning</h3>
+            </div>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fas fa-brain"></i> TensorFlow.js</span>
+              <span class="tech-chip"><i class="fas fa-microphone-alt"></i> Web Speech API</span>
+              <span class="tech-chip"><i class="fas fa-camera"></i> Google Generative AI</span>
+            </div>
+          </div>
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-check-circle"></i></div>
+              <h3>QA & Testing Tools</h3>
+            </div>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fas fa-check-double"></i> Software QA</span>
+              <span class="tech-chip"><i class="fas fa-vial"></i> SQA Testing</span>
+              <span class="tech-chip"><i class="fas fa-chart-line"></i> JMeter</span>
+              <span class="tech-chip"><i class="fas fa-flask"></i> JUnit</span>
+            </div>
+          </div>
+          <div class="tech-category-item">
+            <div class="tech-category-header">
+              <div class="category-icon"><i class="fas fa-tools"></i></div>
+              <h3>Development Tools</h3>
+            </div>
+            <div class="tech-list">
+              <span class="tech-chip"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tech-chip"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tech-chip"><i class="fas fa-cloud-upload-alt"></i> Vercel</span>
+              <span class="tech-chip"><i class="fas fa-code"></i> VS Code</span>
+              <span class="tech-chip"><i class="fab fa-android"></i> Android Studio</span>
+              <span class="tech-chip"><i class="fas fa-paper-plane"></i> Postman</span>
+              <span class="tech-chip"><i class="fab fa-figma"></i> Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid" id="projectGrid"></div>
+        <div id="showMoreContainer" style="text-align: center; margin-top: 3rem;">
+          <button id="showMoreBtn" class="btn primary-btn"
+            style="padding: 0.8rem 2rem; font-size: 1rem; border-radius: 30px; display: inline-flex; align-items: center; gap: 8px;">
+            Show More Projects <i class="fas fa-chevron-down"></i>
           </button>
-        </form>
+        </div>
       </div>
-      
-      <div class="availability-badge">
-        <i class="fas fa-briefcase"></i>
-        <span>Available for <strong>Remote</strong> & <strong>On-site</strong> Opportunities</span>
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Based in Sri Lanka 🇱🇰</span>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p style="margin-bottom: 1.5rem; text-align: center; color: #b9c7da;">Have a project in mind? Let's collaborate!
+          👇</p>
+
+        <div class="quick-contact-cards">
+          <div class="quick-card" onclick="window.location.href='mailto:deshandhakshitha16@gmail.com'">
+            <div class="quick-card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="quick-card-info">
+              <h4>Email Me</h4>
+              <p>deshandhakshitha16@gmail.com</p>
+            </div>
+            <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="quick-card"
+            onclick="window.open('https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!', '_blank')">
+            <div class="quick-card-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="quick-card-info">
+              <h4>WhatsApp</h4>
+              <p>+94 76 977 6315</p>
+            </div>
+            <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="quick-card" onclick="window.open('https://github.com/deshan2004', '_blank')">
+            <div class="quick-card-icon"><i class="fab fa-github"></i></div>
+            <div class="quick-card-info">
+              <h4>GitHub</h4>
+              <p>@deshan2004</p>
+            </div>
+            <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="quick-card"
+            onclick="window.open('https://linkedin.com/in/deshan-siriwardhana-591763277', '_blank')">
+            <div class="quick-card-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="quick-card-info">
+              <h4>LinkedIn</h4>
+              <p>Connect with me</p>
+            </div>
+            <div class="quick-card-action"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <div class="form-header">
+            <i class="fas fa-paper-plane"></i>
+            <h3>Send me a message</h3>
+            <p>I'll get back to you within 24 hours</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label><i class="fas fa-user"></i> Your Name *</label>
+                <input type="text" id="senderName" placeholder="e.g., John Doe" required>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email Address *</label>
+                <input type="email" id="senderEmail" placeholder="john@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-tag"></i> Subject *</label>
+              <input type="text" id="senderSubject" placeholder="Project Inquiry / Collaboration / Question" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-comment"></i> Message *</label>
+              <textarea id="senderMessage" rows="5"
+                placeholder="Tell me about your project or what you'd like to discuss..." required></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+        <div class="availability-badge">
+          <i class="fas fa-briefcase"></i>
+          <span>Available for <strong>Remote</strong> & <strong>On-site</strong> Opportunities</span>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Based in Sri Lanka 🇱🇰</span>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
-<footer>
-  
-  <p>© 2026 Deshan Siriwardhana — Full-Stack Developer · AI Enthusiast | SQA Focused</p>
+  <footer>
 
-</footer>
+    <p>© 2026 Deshan Siriwardhana — Full-Stack Developer · AI Enthusiast | SQA Focused</p>
 
-<div id="toast" class="toast"></div>
+  </footer>
 
-<script src="script.js?v=14"></script>
+<script src="script.js?v=15"></script>
+
+  <script src="script.js?v=14"></script>
 
 </body>
+
 </html>

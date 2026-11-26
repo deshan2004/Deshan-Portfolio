@@ -709,18 +709,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3D Hanging Lanyard Pass - Interactive Mouse Parallax & Scroll Physics
+  // 3D Hanging Lanyard Pass in CodeCraft Section - Drop In Trigger & Interactive Tilt
+  const startupSection = document.getElementById('startup');
   const lanyardContainer = document.getElementById('lanyardContainer');
   const lanyardCard = document.getElementById('lanyardCard');
   const cardGlare = document.getElementById('cardGlare');
 
+  if (startupSection && lanyardContainer) {
+    // Scroll trigger: when scrolling down to CodeCraft, drop down the lanyard pass from above
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startupSection.classList.add('lanyard-visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(startupSection);
+  }
+
   if (lanyardContainer && lanyardCard) {
-    let isHovered = false;
-
-    lanyardContainer.addEventListener('mouseenter', () => {
-      isHovered = true;
-    });
-
     lanyardContainer.addEventListener('mousemove', (e) => {
       const rect = lanyardCard.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -743,22 +751,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     lanyardContainer.addEventListener('mouseleave', () => {
-      isHovered = false;
       lanyardCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
       if (cardGlare) {
         cardGlare.style.opacity = '0.5';
       }
     });
-
-    // Dynamic Downward Tension Reaction on Scroll ("pallata yaddi")
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < 700 && !isHovered) {
-        const dropOffset = scrollY * 0.16;
-        const subtleSwing = Math.sin(scrollY * 0.02) * 2.2;
-        lanyardContainer.style.transform = `translateY(${dropOffset}px) rotate(${subtleSwing}deg)`;
-      }
-    }, { passive: true });
   }
 });
 

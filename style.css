@@ -360,30 +360,152 @@ section {
 }
 
 /* ===================================================
-   3D HANGING LANYARD DEVELOPER ID BADGE
+   HERO SECTION: SEAMLESS FEATHER-MASKED VIDEO
    =================================================== */
 .hero-right {
   order: 2;
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
-  perspective: 1200px;
+  perspective: 1000px;
 }
 
-.lanyard-container {
+.profile-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+}
+
+.profile-motion-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  will-change: transform, filter, opacity;
+  animation: heroVideoFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Full natural video blend - No box/borders, feather-masked on all 4 sides */
+.profile-photo,
+.profile-video {
+  width: 100%;
+  max-width: 440px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: contrast(1.05) brightness(1.02);
+  -webkit-mask-image: radial-gradient(ellipse 65% 75% at 50% 45%, #000 38%, rgba(0, 0, 0, 0.65) 60%, transparent 90%);
+  mask-image: radial-gradient(ellipse 65% 75% at 50% 45%, #000 38%, rgba(0, 0, 0, 0.65) 60%, transparent 90%);
+}
+
+.profile-frame:hover .profile-video,
+.profile-frame:hover .profile-photo {
+  transform: scale(1.02);
+  filter: contrast(1.08) brightness(1.05);
+}
+
+.profile-status {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background: rgba(5, 8, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.4);
+  animation: statusPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s forwards;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #34d399;
+  animation: blink 2s infinite;
+}
+
+@keyframes heroVideoFadeIn {
+  0% {
+    opacity: 0;
+    transform: perspective(900px) translateY(20px) scale(0.96);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(900px) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes statusPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===================================================
+   CODECRAFT SECTION: 3D HANGING LANYARD FOUNDER PASS
+   (Drops down from above when scrolling into CodeCraft)
+   =================================================== */
+.startup-visual-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  perspective: 1200px;
+  position: relative;
+  min-height: 520px;
+}
+
+.startup-section .lanyard-container {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   transform-origin: top center;
-  margin-top: -40px;
-  animation: lanyardDropIn 1.5s cubic-bezier(0.34, 1.4, 0.64, 1) forwards,
-             lanyardGentleSway 6s ease-in-out 1.5s infinite alternate;
+  margin-top: -30px;
+  opacity: 0;
+  transform: translateY(-280px) rotate(-6deg);
+  transition: transform 1.3s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.5s ease;
+  pointer-events: none;
   cursor: grab;
   user-select: none;
   z-index: 10;
+}
+
+/* When user scrolls into CodeCraft, triggers the drop-down entrance */
+.startup-section.lanyard-visible .lanyard-container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) rotate(0deg);
+  animation: lanyardGentleSway 6s ease-in-out 1.4s infinite alternate;
 }
 
 .lanyard-container:active {
@@ -400,7 +522,7 @@ section {
 
 .strap-ribbon {
   width: 32px;
-  height: 120px;
+  height: 110px;
   background: #090d14 linear-gradient(90deg, #05070a 0%, #151c27 50%, #05070a 100%);
   border-left: 2px solid rgba(6, 182, 212, 0.45);
   border-right: 2px solid rgba(139, 92, 246, 0.45);
@@ -574,7 +696,7 @@ section {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Card Media / Photo Area with Vertical Side Tag */
+/* Card Media / Photo Area with Image */
 .card-media-wrapper {
   display: flex;
   gap: 8px;
@@ -594,13 +716,13 @@ section {
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-.card-video,
-.card-fallback-photo {
+.card-photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 10%;
   display: block;
+  filter: contrast(1.08) brightness(1.03);
 }
 
 .photo-scanline {
@@ -709,41 +831,22 @@ section {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(37, 211, 102, 0.15);
-  border: 1px solid rgba(37, 211, 102, 0.35);
-  color: #25d366;
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: #06b6d4;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .card-connect-btn:hover {
-  background: #25d366;
+  background: #06b6d4;
   color: #030508;
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
-}
-
-/* Animations */
-@keyframes lanyardDropIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-240px) rotate(-6deg);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(18px) rotate(3deg);
-  }
-  80% {
-    transform: translateY(-6px) rotate(-1.5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotate(0deg);
-  }
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
 }
 
 @keyframes lanyardGentleSway {
@@ -759,9 +862,12 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lanyard-container {
+  .lanyard-container,
+  .profile-motion-wrapper,
+  .profile-status {
     animation: none !important;
     transform: none !important;
+    opacity: 1 !important;
   }
 }
 
