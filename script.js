@@ -680,4 +680,43 @@ if (window.botpressWebChat) {
   }, 300);
   setTimeout(() => clearInterval(waitForBP), 8000);
 }
+
+// Hero Profile Video Controller
+document.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.getElementById('heroProfileVideo');
+  const replayBtn = document.getElementById('videoReplayBtn');
+
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
+    
+    const tryAutoplay = () => {
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          heroVideo.muted = true;
+          heroVideo.play().catch(e => console.log('Autoplay deferred:', e));
+        });
+      }
+    };
+
+    tryAutoplay();
+
+    heroVideo.addEventListener('ended', () => {
+      if (replayBtn) replayBtn.classList.add('visible');
+    });
+
+    if (replayBtn) {
+      replayBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        heroVideo.currentTime = 0;
+        heroVideo.play();
+        replayBtn.classList.add('spinning');
+        setTimeout(() => replayBtn.classList.remove('spinning'), 650);
+      });
+    }
+  }
+});
+
 
