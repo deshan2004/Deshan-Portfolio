@@ -681,16 +681,16 @@ if (window.botpressWebChat) {
   setTimeout(() => clearInterval(waitForBP), 8000);
 }
 
-// Hero Profile Video Controller
+// Hero Profile Video Controller - Continuous Seamless Auto-Playback
 document.addEventListener('DOMContentLoaded', () => {
   const heroVideo = document.getElementById('heroProfileVideo');
-  const replayBtn = document.getElementById('videoReplayBtn');
 
   if (heroVideo) {
     heroVideo.muted = true;
+    heroVideo.loop = true;
     heroVideo.playsInline = true;
     
-    const tryAutoplay = () => {
+    const startPlay = () => {
       const playPromise = heroVideo.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
@@ -700,22 +700,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    tryAutoplay();
+    startPlay();
 
-    heroVideo.addEventListener('ended', () => {
-      if (replayBtn) replayBtn.classList.add('visible');
+    // In case browser pauses background video when tab blurs or wakes
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && heroVideo.paused) {
+        heroVideo.play().catch(() => {});
+      }
     });
-
-    if (replayBtn) {
-      replayBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        heroVideo.currentTime = 0;
-        heroVideo.play();
-        replayBtn.classList.add('spinning');
-        setTimeout(() => replayBtn.classList.remove('spinning'), 650);
-      });
-    }
   }
 });
 
