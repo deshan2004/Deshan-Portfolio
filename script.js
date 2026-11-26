@@ -702,12 +702,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startPlay();
 
-    // In case browser pauses background video when tab blurs or wakes
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && heroVideo.paused) {
         heroVideo.play().catch(() => {});
       }
     });
+  }
+
+  // 3D Hanging Lanyard Pass - Interactive Mouse Parallax & Scroll Physics
+  const lanyardContainer = document.getElementById('lanyardContainer');
+  const lanyardCard = document.getElementById('lanyardCard');
+  const cardGlare = document.getElementById('cardGlare');
+
+  if (lanyardContainer && lanyardCard) {
+    let isHovered = false;
+
+    lanyardContainer.addEventListener('mouseenter', () => {
+      isHovered = true;
+    });
+
+    lanyardContainer.addEventListener('mousemove', (e) => {
+      const rect = lanyardCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -12;
+      const rotateY = ((x - centerX) / centerX) * 12;
+
+      lanyardCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      
+      if (cardGlare) {
+        const glareX = (x / rect.width) * 100;
+        const glareY = (y / rect.height) * 100;
+        cardGlare.style.transform = `translate(${glareX - 50}%, ${glareY - 50}%)`;
+        cardGlare.style.opacity = '1';
+      }
+    });
+
+    lanyardContainer.addEventListener('mouseleave', () => {
+      isHovered = false;
+      lanyardCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      if (cardGlare) {
+        cardGlare.style.opacity = '0.5';
+      }
+    });
+
+    // Dynamic Downward Tension Reaction on Scroll ("pallata yaddi")
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY < 700 && !isHovered) {
+        const dropOffset = scrollY * 0.16;
+        const subtleSwing = Math.sin(scrollY * 0.02) * 2.2;
+        lanyardContainer.style.transform = `translateY(${dropOffset}px) rotate(${subtleSwing}deg)`;
+      }
+    }, { passive: true });
   }
 });
 
