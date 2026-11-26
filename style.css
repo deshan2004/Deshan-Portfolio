@@ -2509,3 +2509,79 @@ footer {
 .terminal-input::placeholder {
   color: #475569;
 }
+
+/* Terminal Themes & Advanced Window Controls */
+.terminal-window {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-dots .t-dot {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.terminal-dots .t-dot:hover {
+  transform: scale(1.3);
+  opacity: 0.85;
+}
+
+.terminal-window.is-collapsed .terminal-body {
+  display: none;
+}
+
+.terminal-window.is-expanded .terminal-output {
+  max-height: 480px;
+}
+
+/* Theme: Matrix (Cyber Green) */
+.terminal-window.theme-matrix {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(16, 185, 129, 0.25);
+  background: rgba(4, 15, 8, 0.96);
+}
+
+.terminal-window.theme-matrix .t-accent { color: #10b981; }
+.terminal-window.theme-matrix .t-cmd { color: #34d399; }
+.terminal-window.theme-matrix .terminal-prompt { color: #10b981; }
+.terminal-window.theme-matrix .terminal-input { color: #34d399; }
+.terminal-window.theme-matrix .t-chip:hover { border-color: #10b981; color: #34d399; background: rgba(16, 185, 129, 0.15); }
+.terminal-window.theme-matrix .terminal-title i { color: #10b981; }
+
+/* Theme: Dracula (Purple / Pink) */
+.terminal-window.theme-dracula {
+  border-color: rgba(192, 132, 252, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(192, 132, 252, 0.25);
+  background: rgba(15, 10, 26, 0.96);
+}
+
+.terminal-window.theme-dracula .t-accent { color: #f472b6; }
+.terminal-window.theme-dracula .t-cmd { color: #c084fc; }
+.terminal-window.theme-dracula .terminal-prompt { color: #c084fc; }
+.terminal-window.theme-dracula .terminal-input { color: #e9d5ff; }
+.terminal-window.theme-dracula .t-chip:hover { border-color: #c084fc; color: #f472b6; background: rgba(192, 132, 252, 0.15); }
+.terminal-window.theme-dracula .terminal-title i { color: #f472b6; }
+
+/* Theme: Amber (Retro CRT) */
+.terminal-window.theme-amber {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(245, 158, 11, 0.25);
+  background: rgba(18, 12, 4, 0.96);
+}
+
+.terminal-window.theme-amber .t-accent { color: #fbbf24; }
+.terminal-window.theme-amber .t-cmd { color: #f59e0b; }
+.terminal-window.theme-amber .terminal-prompt { color: #f59e0b; }
+.terminal-window.theme-amber .terminal-input { color: #fde68a; }
+.terminal-window.theme-amber .t-chip:hover { border-color: #f59e0b; color: #fbbf24; background: rgba(245, 158, 11, 0.15); }
+.terminal-window.theme-amber .terminal-title i { color: #fbbf24; }
+
+/* ASCII Preformatted block */
+.terminal-ascii {
+  font-family: monospace;
+  font-size: 0.74rem;
+  line-height: 1.25;
+  color: #38bdf8;
+  margin: 0.4rem 0;
+  overflow-x: auto;
+  white-space: pre;
+}

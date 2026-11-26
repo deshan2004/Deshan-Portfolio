@@ -1052,18 +1052,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const terminalForm = document.getElementById('terminalForm');
   const terminalInput = document.getElementById('terminalInput');
   const terminalOutput = document.getElementById('terminalOutput');
+  const terminalWindow = document.getElementById('terminalWindow');
   const quickCmdChips = document.querySelectorAll('.t-chip');
+  const dotRed = document.getElementById('termDotRed');
+  const dotYellow = document.getElementById('termDotYellow');
+  const dotGreen = document.getElementById('termDotGreen');
 
   if (terminalForm && terminalInput && terminalOutput) {
+    const cmdHistory = [];
+    let historyCursor = -1;
+
     const commands = {
       help: () => [
         'Available commands:',
-        '  <span class="t-accent">skills</span>    - List core technical stack & architectures',
-        '  <span class="t-accent">projects</span>  - Show highlighted production projects',
-        '  <span class="t-accent">startup</span>   - About CodeCraft Solutions & venture',
-        '  <span class="t-accent">hire</span>      - Contact Deshan directly for opportunities',
-        '  <span class="t-accent">about</span>     - Quick bio and background summary',
-        '  <span class="t-accent">clear</span>     - Clear terminal buffer'
+        '  <span class="t-accent">neofetch</span> - Display system information & ASCII banner',
+        '  <span class="t-accent">skills</span>   - List core technical stack & architectures',
+        '  <span class="t-accent">projects</span> - Show highlighted production projects',
+        '  <span class="t-accent">cv</span>       - Download Deshan\'s official Resume / CV',
+        '  <span class="t-accent">socials</span>  - Direct links to GitHub, LinkedIn, WhatsApp',
+        '  <span class="t-accent">startup</span>  - About CodeCraft Solutions & venture',
+        '  <span class="t-accent">theme</span>    - Switch color theme (matrix, dracula, amber, cyber)',
+        '  <span class="t-accent">hire</span>     - Contact Deshan directly for opportunities',
+        '  <span class="t-accent">about</span>    - Quick bio and background summary',
+        '  <span class="t-accent">clear</span>    - Clear terminal buffer'
+      ],
+      neofetch: () => [
+        '<pre class="terminal-ascii">' +
+        '   _____             <span class="t-accent">deshan@developer-hub</span>\n' +
+        '  / ____|            --------------------\n' +
+        ' | |  __             <span class="t-cmd">OS:</span> DeshanOS v2.4 (x86_64)\n' +
+        ' | | |_ |            <span class="t-cmd">Role:</span> Full-Stack Developer & AI Systems\n' +
+        ' | |__| |            <span class="t-cmd">Undergrad:</span> BSc (Hons) Software Engineering\n' +
+        '  \\_____|            <span class="t-cmd">Uptime:</span> 21+ Years of Innovation\n' +
+        '                     <span class="t-cmd">Shell:</span> zsh 5.9 (clean-architecture)\n' +
+        '                     <span class="t-cmd">Venture:</span> CodeCraft Solutions\n' +
+        '                     <span class="t-cmd">Status:</span> <span class="t-success">Open for Job Opportunities 🇱🇰</span>\n' +
+        '</pre>'
       ],
       skills: () => [
         '🚀 Core Technical Proficiencies:',
@@ -1080,6 +1104,29 @@ document.addEventListener('DOMContentLoaded', () => {
         '  4. <strong>CodeCraft Studio:</strong> Modern SaaS and client innovation portal',
         '  Scroll to <a href="#projects" class="t-accent">#projects</a> for full live demos.'
       ],
+      cv: () => {
+        const link = document.getElementById('downloadCvBtn') || document.querySelector('a[download]');
+        if (link) {
+          link.click();
+        } else {
+          const a = document.createElement('a');
+          a.href = 'CV.pdf';
+          a.download = 'deshan siriwardhana cv.pdf';
+          a.click();
+        }
+        return [
+          '📄 <span class="t-success">Initiating CV download (deshan siriwardhana cv.pdf)...</span>',
+          'If download does not trigger, <a href="CV.pdf" download="deshan siriwardhana cv.pdf" class="t-accent">click here</a>.'
+        ];
+      },
+      resume: () => commands.cv(),
+      socials: () => [
+        '🌐 Connect with Deshan:',
+        '  • <strong>GitHub:</strong> <a href="https://github.com/deshan2004" target="_blank" class="t-accent">github.com/deshan2004</a>',
+        '  • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/deshan-siriwardhana/" target="_blank" class="t-accent">linkedin.com/in/deshan-siriwardhana</a>',
+        '  • <strong>WhatsApp:</strong> <a href="https://wa.me/94769776315" target="_blank" class="t-accent">+94 76 977 6315</a>',
+        '  • <strong>Email:</strong> <a href="mailto:deshandhakshitha16@gmail.com" class="t-accent">deshandhakshitha16@gmail.com</a>'
+      ],
       startup: () => [
         '💡 <strong>CodeCraft Solutions:</strong>',
         '  Founder: Deshan Siriwardhana',
@@ -1092,6 +1139,35 @@ document.addEventListener('DOMContentLoaded', () => {
         '  Passionate about clean code, robust SQA, and AI accessibility.',
         '  Based in Sri Lanka 🇱🇰 · Open for remote & on-site opportunities.'
       ],
+      theme: (themeArg) => {
+        if (!terminalWindow) return ['Terminal container not found.'];
+        terminalWindow.classList.remove('theme-matrix', 'theme-dracula', 'theme-amber');
+        const t = (themeArg || '').toLowerCase().trim();
+        if (t === 'matrix') {
+          terminalWindow.classList.add('theme-matrix');
+          return ['🟩 <span class="t-success">Matrix theme activated. Wake up, Neo...</span>'];
+        } else if (t === 'dracula') {
+          terminalWindow.classList.add('theme-dracula');
+          return ['🟪 <span class="t-cmd">Dracula cyberpunk theme activated.</span>'];
+        } else if (t === 'amber') {
+          terminalWindow.classList.add('theme-amber');
+          return ['🟧 <span class="t-warn">Retro Amber CRT theme activated.</span>'];
+        } else if (t === 'cyber' || t === 'default') {
+          return ['🟦 <span class="t-accent">Cyber theme restored.</span>'];
+        } else {
+          return [
+            '🎨 Available terminal themes:',
+            '  • <span class="t-accent">theme matrix</span>  - The Matrix green hacker style',
+            '  • <span class="t-accent">theme dracula</span> - Modern purple cyberpunk',
+            '  • <span class="t-accent">theme amber</span>   - Vintage monochrome amber',
+            '  • <span class="t-accent">theme cyber</span>   - Default cyan/purple theme'
+          ];
+        }
+      },
+      matrix: () => commands.theme('matrix'),
+      dracula: () => commands.theme('dracula'),
+      amber: () => commands.theme('amber'),
+      cyber: () => commands.theme('cyber'),
       hire: () => {
         setTimeout(() => {
           const contactSec = document.getElementById('contact');
@@ -1102,6 +1178,9 @@ document.addEventListener('DOMContentLoaded', () => {
           'Connect on WhatsApp: <a href="https://wa.me/94769776315" target="_blank" class="t-accent">+94 76 977 6315</a>'
         ];
       },
+      sudo: () => [
+        '🔒 <span class="t-warn">[SECURITY]: Nice try! User "deshan" already has superuser privileges.</span>'
+      ],
       clear: () => {
         terminalOutput.innerHTML = '';
         return [];
@@ -1113,16 +1192,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!raw) return;
 
       playSynthSound('terminal');
+      cmdHistory.push(raw);
+      historyCursor = -1;
 
       const userLine = document.createElement('div');
       userLine.className = 'terminal-line';
       userLine.innerHTML = `<span class="t-accent">deshan@terminal:~$</span> <span class="t-cmd">${raw}</span>`;
       terminalOutput.appendChild(userLine);
 
-      const normalized = raw.toLowerCase().replace(/--[a-z0-9_-]+/g, '').trim();
+      const parts = raw.split(/\s+/);
+      const mainCmd = parts[0].toLowerCase();
+      const arg = parts.slice(1).join(' ');
 
-      if (commands[normalized]) {
-        const result = commands[normalized]();
+      if (commands[mainCmd]) {
+        const result = commands[mainCmd](arg);
         result.forEach(line => {
           const outLine = document.createElement('div');
           outLine.className = 'terminal-line';
@@ -1146,12 +1229,64 @@ document.addEventListener('DOMContentLoaded', () => {
       runCommand(val);
     });
 
+    // Arrow Up / Down for History & Tab for Autocomplete
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (cmdHistory.length > 0) {
+          if (historyCursor === -1) historyCursor = cmdHistory.length - 1;
+          else if (historyCursor > 0) historyCursor--;
+          terminalInput.value = cmdHistory[historyCursor] || '';
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (cmdHistory.length > 0 && historyCursor !== -1) {
+          if (historyCursor < cmdHistory.length - 1) {
+            historyCursor++;
+            terminalInput.value = cmdHistory[historyCursor] || '';
+          } else {
+            historyCursor = -1;
+            terminalInput.value = '';
+          }
+        }
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        const cur = terminalInput.value.toLowerCase().trim();
+        if (cur) {
+          const match = Object.keys(commands).find(c => c.startsWith(cur));
+          if (match) terminalInput.value = match;
+        }
+      }
+    });
+
     quickCmdChips.forEach(chip => {
       chip.addEventListener('click', () => {
         const cmd = chip.getAttribute('data-cmd');
         if (cmd) runCommand(cmd);
       });
     });
+
+    // Window Dots Controls
+    if (dotRed) {
+      dotRed.addEventListener('click', () => {
+        terminalOutput.innerHTML = '';
+        playSynthSound('terminal');
+      });
+    }
+
+    if (dotYellow && terminalWindow) {
+      dotYellow.addEventListener('click', () => {
+        terminalWindow.classList.toggle('is-collapsed');
+        playSynthSound('click');
+      });
+    }
+
+    if (dotGreen && terminalWindow) {
+      dotGreen.addEventListener('click', () => {
+        terminalWindow.classList.toggle('is-expanded');
+        playSynthSound('click');
+      });
+    }
   }
 });
 
