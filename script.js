@@ -628,34 +628,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.openChatbot = function () {
   if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
-    window.botpressWebChat.sendEvent({ type: 'show' });
-    return;
+    try {
+      window.botpressWebChat.sendEvent({ type: 'show' });
+      return;
+    } catch (e) {}
   }
 
-  const toastElem = document.getElementById('toast');
-  const showMsg = (msg, isError = false) => {
-    if (toastElem) {
-      toastElem.textContent = msg;
-      toastElem.classList.add('show');
-      toastElem.style.borderLeftColor = isError ? '#ef4444' : '#ffb347';
-      setTimeout(() => toastElem.classList.remove('show'), 2800);
-    } else {
-      alert(msg);
-    }
-  };
-
-  showMsg("🤖 Chat is initializing, please wait...");
-  let attempts = 0;
-  const interval = setInterval(() => {
-    if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
-      window.botpressWebChat.sendEvent({ type: 'show' });
-      clearInterval(interval);
-    } else if (attempts >= 12) {
-      clearInterval(interval);
-      showMsg("❌ Chat assistant temporarily unavailable.", true);
-    }
-    attempts++;
-  }, 500);
+  // Graceful fallback to direct WhatsApp connection
+  showToast("💬 Connecting you to Deshan on WhatsApp...", 'success');
+  setTimeout(() => {
+    window.open("https://wa.me/94769776315?text=Hi%20Deshan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!", "_blank");
+  }, 600);
 };
 
 if (window.botpressWebChat) {
