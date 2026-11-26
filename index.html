@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
   <!-- Botpress chatbot core scripts -->
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/05/15/05/20260515053635-BXXX2PUA.js" defer></script>
@@ -24,6 +24,9 @@
 </head>
 
 <body>
+  <!-- Ambient Cyber Glow Cursor -->
+  <div class="glow-cursor" id="glowCursor"></div>
+  <div class="glow-cursor-trail" id="glowCursorTrail"></div>
 
   <div class="video-background">
     <video autoplay muted loop playsinline id="bg-video">
@@ -54,6 +57,9 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="sound-toggle-btn" id="soundToggleBtn" title="Toggle Sound FX" aria-label="Toggle Sound Effects">
+        <i class="fas fa-volume-mute" id="soundToggleIcon"></i>
+      </button>
     </div>
   </nav>
 
@@ -63,7 +69,7 @@
         <div class="hero-left">
           <div class="badge-glow">✨ Available for Work</div>
           <h1>Hi, I'm <span>Deshan Siriwardhana</span></h1>
-          <p>Software Engineering Undergraduate | Full-Stack Developer · AI Enthusiast | SQA & Clean Code Advocate</p>
+          <p class="hero-typing-p">Software Engineering Undergraduate | <span id="heroTypingText" class="typing-text">Full-Stack Developer</span><span class="typing-cursor">|</span></p>
           <div class="hero-btns">
             <a href="#projects" class="btn"><i class="fas fa-code"></i> Projects</a>
             <a href="https://github.com/deshan2004" target="_blank" class="btn btn-outline"><i
@@ -378,6 +384,44 @@
             </div>
           </div>
         </div>
+
+        <!-- Interactive Cyber Developer Terminal Widget -->
+        <div class="terminal-widget-container">
+          <div class="terminal-window">
+            <div class="terminal-topbar">
+              <div class="terminal-dots">
+                <span class="t-dot t-red"></span>
+                <span class="t-dot t-yellow"></span>
+                <span class="t-dot t-green"></span>
+              </div>
+              <div class="terminal-title">
+                <i class="fas fa-terminal"></i> deshan@developer-system: ~/interactive-shell
+              </div>
+              <div class="terminal-badge">LIVE SHELL</div>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div class="terminal-output" id="terminalOutput">
+                <div class="terminal-line system-welcome">
+                  <span class="t-accent">⚡ DeshanOS v2.4 (Interactive Dev Terminal)</span>
+                </div>
+                <div class="terminal-line">
+                  Type <span class="t-cmd">'help'</span> or click suggestions below to explore:
+                </div>
+              </div>
+              <div class="terminal-quick-cmds">
+                <button class="t-chip" data-cmd="skills">skills</button>
+                <button class="t-chip" data-cmd="projects">projects</button>
+                <button class="t-chip" data-cmd="startup">startup</button>
+                <button class="t-chip t-chip-primary" data-cmd="hire">hire --now</button>
+                <button class="t-chip" data-cmd="clear">clear</button>
+              </div>
+              <form class="terminal-input-row" id="terminalForm" autocomplete="off">
+                <span class="terminal-prompt"><i class="fas fa-chevron-right"></i></span>
+                <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command (e.g. 'help', 'skills', 'hire')..." spellcheck="false" autocomplete="off">
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -483,7 +527,7 @@
     <p>© 2026 Deshan Siriwardhana — Full-Stack Developer · AI Enthusiast | SQA Focused</p>
   </footer>
 
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
 </body>
 
 </html>

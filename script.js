@@ -731,33 +731,426 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Dynamic Typing Effect in Hero Section
+  const typingElement = document.getElementById('heroTypingText');
+  if (typingElement) {
+    const roles = [
+      'Full-Stack Developer',
+      'AI Systems & SaaS Builder',
+      'SQA & Clean Code Advocate',
+      'Founder @ CodeCraft Solutions'
+    ];
+    let roleIndex = 0;
+    let charIndex = roles[0].length;
+    let isDeleting = false;
+    let typingSpeed = 90;
+
+    const type = () => {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        charIndex--;
+        typingElement.textContent = currentRole.substring(0, charIndex);
+        typingSpeed = 38;
+      } else {
+        charIndex++;
+        typingElement.textContent = currentRole.substring(0, charIndex);
+        typingSpeed = 85;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        typingSpeed = 2200; // Pause at end of completed title
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 350; // Pause before typing next title
+      }
+
+      setTimeout(type, typingSpeed);
+    };
+
+    setTimeout(type, 1600);
+  }
+
+  // 3D Hanging Lanyard Pass with Elastic Drag & Spring Pendulum Physics
   if (lanyardContainer && lanyardCard) {
-    lanyardContainer.addEventListener('mousemove', (e) => {
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let dragX = 0, dragY = 0;
+    let velX = 0, velY = 0;
+    let animFrame = null;
+
+    // Subtle 3D tilt when simply hovering
+    const updateTilt = (e) => {
+      if (isDragging) return;
       const rect = lanyardCard.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      
+
       const rotateX = ((y - centerY) / centerY) * -12;
       const rotateY = ((x - centerX) / centerX) * 12;
 
       lanyardCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-      
+
       if (cardGlare) {
         const glareX = (x / rect.width) * 100;
         const glareY = (y / rect.height) * 100;
         cardGlare.style.transform = `translate(${glareX - 50}%, ${glareY - 50}%)`;
+        cardGlare.style.opacity = '0.9';
+      }
+    };
+
+    // Spring pendulum physics loop on release
+    const runSpring = () => {
+      const k = 0.08;
+      const damping = 0.82;
+
+      const ax = -k * dragX;
+      const ay = -k * dragY;
+
+      velX = (velX + ax) * damping;
+      velY = (velY + ay) * damping;
+
+      dragX += velX;
+      dragY += velY;
+
+      const rotZ = dragX * 0.18;
+      const rotY = dragX * 0.14;
+      const rotX = -dragY * 0.12;
+
+      lanyardCard.style.transform = `perspective(1000px) translate3d(${dragX}px, ${dragY}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`;
+
+      if (Math.abs(dragX) > 0.4 || Math.abs(dragY) > 0.4 || Math.abs(velX) > 0.4 || Math.abs(velY) > 0.4) {
+        animFrame = requestAnimationFrame(runSpring);
+      } else {
+        dragX = 0;
+        dragY = 0;
+        velX = 0;
+        velY = 0;
+        lanyardCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        if (cardGlare) cardGlare.style.opacity = '0.65';
+      }
+    };
+
+    const startDrag = (clientX, clientY) => {
+      isDragging = true;
+      if (animFrame) cancelAnimationFrame(animFrame);
+      startX = clientX - dragX;
+      startY = clientY - dragY;
+      lanyardCard.classList.add('is-dragging');
+    };
+
+    const moveDrag = (clientX, clientY) => {
+      if (!isDragging) return;
+      const rawX = clientX - startX;
+      const rawY = clientY - startY;
+
+      dragX = Math.max(-160, Math.min(160, rawX));
+      dragY = Math.max(-80, Math.min(180, rawY));
+
+      const rotZ = dragX * 0.18;
+      const rotY = dragX * 0.14;
+      const rotX = -dragY * 0.12;
+
+      lanyardCard.style.transform = `perspective(1000px) translate3d(${dragX}px, ${dragY}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg) scale(1.04)`;
+
+      if (cardGlare) {
+        cardGlare.style.transform = `translate(${(dragX / 3)}%, ${(dragY / 3)}%)`;
         cardGlare.style.opacity = '1';
+      }
+    };
+
+    const endDrag = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      lanyardCard.classList.remove('is-dragging');
+      runSpring();
+    };
+
+    // Mouse listeners
+    lanyardCard.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.card-connect-btn')) return;
+      startDrag(e.clientX, e.clientY);
+      e.preventDefault();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        moveDrag(e.clientX, e.clientY);
       }
     });
 
+    window.addEventListener('mouseup', () => {
+      if (isDragging) endDrag();
+    });
+
+    lanyardContainer.addEventListener('mousemove', updateTilt);
+
     lanyardContainer.addEventListener('mouseleave', () => {
-      lanyardCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-      if (cardGlare) {
-        cardGlare.style.opacity = '0.5';
+      if (!isDragging && Math.abs(dragX) < 1 && Math.abs(dragY) < 1) {
+        lanyardCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        if (cardGlare) cardGlare.style.opacity = '0.65';
       }
+    });
+
+    // Touch listeners
+    lanyardCard.addEventListener('touchstart', (e) => {
+      if (e.target.closest('.card-connect-btn')) return;
+      const touch = e.touches[0];
+      startDrag(touch.clientX, touch.clientY);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length > 0) {
+        const touch = e.touches[0];
+        moveDrag(touch.clientX, touch.clientY);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      if (isDragging) endDrag();
+    });
+  }
+
+  // ===================================================
+  // PROCEDURAL WEB AUDIO SFX & SOUND TOGGLE
+  // ===================================================
+  let audioCtx = null;
+  let soundEnabled = localStorage.getItem('deshan_sound_fx') === 'enabled';
+  const soundToggleBtn = document.getElementById('soundToggleBtn');
+  const soundToggleIcon = document.getElementById('soundToggleIcon');
+
+  const updateSoundUI = () => {
+    if (!soundToggleBtn || !soundToggleIcon) return;
+    if (soundEnabled) {
+      soundToggleBtn.classList.add('sound-active');
+      soundToggleIcon.className = 'fas fa-volume-up';
+      soundToggleBtn.setAttribute('title', 'Sound FX: ON (Click to Mute)');
+    } else {
+      soundToggleBtn.classList.remove('sound-active');
+      soundToggleIcon.className = 'fas fa-volume-mute';
+      soundToggleBtn.setAttribute('title', 'Sound FX: OFF (Click to Enable)');
+    }
+  };
+  updateSoundUI();
+
+  const initAudio = () => {
+    if (!audioCtx) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) audioCtx = new AudioCtx();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  };
+
+  const playSynthSound = (type = 'click') => {
+    if (!soundEnabled) return;
+    initAudio();
+    if (!audioCtx) return;
+
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const now = audioCtx.currentTime;
+
+      if (type === 'hover') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(640, now);
+        gain.gain.setValueAtTime(0.012, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
+        osc.start(now);
+        osc.stop(now + 0.04);
+      } else if (type === 'click') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(520, now);
+        osc.frequency.exponentialRampToValueAtTime(840, now + 0.08);
+        gain.gain.setValueAtTime(0.035, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+        osc.start(now);
+        osc.stop(now + 0.09);
+      } else if (type === 'toggle') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.12);
+        gain.gain.setValueAtTime(0.045, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.14);
+        osc.start(now);
+        osc.stop(now + 0.14);
+      } else if (type === 'terminal') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(760, now);
+        gain.gain.setValueAtTime(0.02, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.035);
+        osc.start(now);
+        osc.stop(now + 0.035);
+      }
+    } catch (e) {}
+  };
+
+  if (soundToggleBtn) {
+    soundToggleBtn.addEventListener('click', () => {
+      initAudio();
+      soundEnabled = !soundEnabled;
+      localStorage.setItem('deshan_sound_fx', soundEnabled ? 'enabled' : 'disabled');
+      updateSoundUI();
+      if (soundEnabled) playSynthSound('toggle');
+    });
+  }
+
+  // ===================================================
+  // AMBIENT CYBER GLOW CURSOR (Fine Pointer Devices)
+  // ===================================================
+  const cursorDot = document.getElementById('glowCursor');
+  const cursorTrail = document.getElementById('glowCursorTrail');
+
+  if (cursorDot && cursorTrail && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = -100, mouseY = -100;
+    let trailX = -100, trailY = -100;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+    });
+
+    const renderTrail = () => {
+      trailX += (mouseX - trailX) * 0.18;
+      trailY += (mouseY - trailY) * 0.18;
+      cursorTrail.style.left = `${trailX}px`;
+      cursorTrail.style.top = `${trailY}px`;
+      requestAnimationFrame(renderTrail);
+    };
+    requestAnimationFrame(renderTrail);
+
+    const interactiveTargets = document.querySelectorAll('a, button, .lanyard-card, .tech-chip, .btn, .stat-item, input, textarea');
+    interactiveTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorDot.classList.add('hovered');
+        cursorTrail.classList.add('hovered');
+        playSynthSound('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hovered');
+        cursorTrail.classList.remove('hovered');
+      });
+      el.addEventListener('click', () => {
+        playSynthSound('click');
+      });
+    });
+  }
+
+  // ===================================================
+  // INTERACTIVE CYBER DEVELOPER TERMINAL WIDGET
+  // ===================================================
+  const terminalForm = document.getElementById('terminalForm');
+  const terminalInput = document.getElementById('terminalInput');
+  const terminalOutput = document.getElementById('terminalOutput');
+  const quickCmdChips = document.querySelectorAll('.t-chip');
+
+  if (terminalForm && terminalInput && terminalOutput) {
+    const commands = {
+      help: () => [
+        'Available commands:',
+        '  <span class="t-accent">skills</span>    - List core technical stack & architectures',
+        '  <span class="t-accent">projects</span>  - Show highlighted production projects',
+        '  <span class="t-accent">startup</span>   - About CodeCraft Solutions & venture',
+        '  <span class="t-accent">hire</span>      - Contact Deshan directly for opportunities',
+        '  <span class="t-accent">about</span>     - Quick bio and background summary',
+        '  <span class="t-accent">clear</span>     - Clear terminal buffer'
+      ],
+      skills: () => [
+        '🚀 Core Technical Proficiencies:',
+        '  • <strong>Frontend:</strong> React 19, Next.js, TypeScript, Tailwind, Angular',
+        '  • <strong>Mobile:</strong> Flutter, Dart, Android Kotlin, Jetpack Compose',
+        '  • <strong>Backend:</strong> Node.js, Express, .NET Core, C#, REST APIs, PostgreSQL',
+        '  • <strong>AI & Testing:</strong> TensorFlow.js, GenAI APIs, JMeter, SQA, SonarQube'
+      ],
+      projects: () => [
+        '💼 Highlighted Works:',
+        '  1. <strong>AI Medical Assistant:</strong> Voice & OCR triage system',
+        '  2. <strong>Smart Agro App:</strong> Crop disease vision detection (Flutter)',
+        '  3. <strong>DocuVault:</strong> Cloud document system with AES-256 encryption',
+        '  4. <strong>CodeCraft Studio:</strong> Modern SaaS and client innovation portal',
+        '  Scroll to <a href="#projects" class="t-accent">#projects</a> for full live demos.'
+      ],
+      startup: () => [
+        '💡 <strong>CodeCraft Solutions:</strong>',
+        '  Founder: Deshan Siriwardhana',
+        '  Focus: Web architecture, cross-platform apps & AI tools.',
+        '  Visit: <a href="https://code-craft-solutions-six.vercel.app" target="_blank" class="t-accent">code-craft-solutions-six.vercel.app</a>'
+      ],
+      about: () => [
+        '👨‍💻 <strong>Deshan Siriwardhana:</strong>',
+        '  BSc (Hons) Software Engineering undergraduate.',
+        '  Passionate about clean code, robust SQA, and AI accessibility.',
+        '  Based in Sri Lanka 🇱🇰 · Open for remote & on-site opportunities.'
+      ],
+      hire: () => {
+        setTimeout(() => {
+          const contactSec = document.getElementById('contact');
+          if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+        return [
+          '🎉 <span class="t-success">Awesome! Redirecting to contact section...</span>',
+          'Connect on WhatsApp: <a href="https://wa.me/94769776315" target="_blank" class="t-accent">+94 76 977 6315</a>'
+        ];
+      },
+      clear: () => {
+        terminalOutput.innerHTML = '';
+        return [];
+      }
+    };
+
+    const runCommand = (cmdText) => {
+      const raw = cmdText.trim();
+      if (!raw) return;
+
+      playSynthSound('terminal');
+
+      const userLine = document.createElement('div');
+      userLine.className = 'terminal-line';
+      userLine.innerHTML = `<span class="t-accent">deshan@terminal:~$</span> <span class="t-cmd">${raw}</span>`;
+      terminalOutput.appendChild(userLine);
+
+      const normalized = raw.toLowerCase().replace(/--[a-z0-9_-]+/g, '').trim();
+
+      if (commands[normalized]) {
+        const result = commands[normalized]();
+        result.forEach(line => {
+          const outLine = document.createElement('div');
+          outLine.className = 'terminal-line';
+          outLine.innerHTML = line;
+          terminalOutput.appendChild(outLine);
+        });
+      } else {
+        const errLine = document.createElement('div');
+        errLine.className = 'terminal-line t-warn';
+        errLine.innerHTML = `command not found: "${raw}". Type <span class="t-cmd">'help'</span> for instructions.`;
+        terminalOutput.appendChild(errLine);
+      }
+
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    };
+
+    terminalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = terminalInput.value;
+      terminalInput.value = '';
+      runCommand(val);
+    });
+
+    quickCmdChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const cmd = chip.getAttribute('data-cmd');
+        if (cmd) runCommand(cmd);
+      });
     });
   }
 });
