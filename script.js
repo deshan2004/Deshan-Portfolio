@@ -626,13 +626,6 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 });
 
-// Botpress Chatbot Code
-window.botpressWebChat.onEvent(function (event) {
-  if (event.type === 'LIFECYCLE.LOADED') {
-    window.botpressWebChat.sendEvent({ type: 'hide' });
-  }
-}, ['LIFECYCLE.LOADED']);
-
 window.openChatbot = function () {
   if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
     window.botpressWebChat.sendEvent({ type: 'show' });
@@ -716,16 +709,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const cardGlare = document.getElementById('cardGlare');
 
   if (startupSection && lanyardContainer) {
+    const triggerLanyard = () => {
+      startupSection.classList.add('lanyard-visible');
+    };
+
     // Scroll trigger: when scrolling down to CodeCraft, drop down the lanyard pass from above
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          startupSection.classList.add('lanyard-visible');
+          triggerLanyard();
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.05 });
 
     observer.observe(startupSection);
+
+    // Initial check in case user loaded the page directly scrolled to #startup
+    const rect = startupSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      triggerLanyard();
+    }
   }
 
   if (lanyardContainer && lanyardCard) {
